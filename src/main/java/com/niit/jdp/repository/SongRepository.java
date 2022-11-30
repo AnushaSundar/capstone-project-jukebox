@@ -13,4 +13,7 @@ public class SongRepository {
 
     public void playSong() {
     }
+
+    public void searchSongByArtistLanguageGenre() {
+    }
 }
