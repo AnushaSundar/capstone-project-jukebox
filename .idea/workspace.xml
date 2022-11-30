@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3fd95403-ad27-4af6-a7d5-f8c74b5ae86e" name="Changes" comment="created PlaylistRepository.java">
+    <list default="true" id="3fd95403-ad27-4af6-a7d5-f8c74b5ae86e" name="Changes" comment="imported Connection interface">
       <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/service/DatabaseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/service/DatabaseService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -112,7 +112,28 @@
       <option name="project" value="LOCAL" />
       <updated>1669810132213</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="added field url to DatabaseService.java">
+      <created>1669811167025</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1669811167025</updated>
+    </task>
+    <task id="LOCAL-00011" summary="added field userName and password to DatabaseService.java">
+      <created>1669811259520</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1669811259520</updated>
+    </task>
+    <task id="LOCAL-00012" summary="imported Connection interface">
+      <created>1669811383788</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1669811383788</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -136,7 +157,10 @@
     <MESSAGE value="created Playlist.java" />
     <MESSAGE value="created SongRepository.java" />
     <MESSAGE value="created PlaylistRepository.java" />
-    <option name="LAST_COMMIT_MESSAGE" value="created PlaylistRepository.java" />
+    <MESSAGE value="added field url to DatabaseService.java" />
+    <MESSAGE value="added field userName and password to DatabaseService.java" />
+    <MESSAGE value="imported Connection interface" />
+    <option name="LAST_COMMIT_MESSAGE" value="imported Connection interface" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
