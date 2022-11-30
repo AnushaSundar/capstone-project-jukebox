@@ -10,4 +10,7 @@ package com.niit.jdp.repository;
 public class SongRepository {
     public void displaySongs() {
     }
+
+    public void playSong() {
+    }
 }
