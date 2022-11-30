@@ -20,4 +20,12 @@ public class Playlist {
         this.playlistId = playlistId;
         this.playlistName = playlistName;
     }
+
+    public int getSongId() {
+        return songId;
+    }
+
+    public void setSongId(int songId) {
+        this.songId = songId;
+    }
 }
