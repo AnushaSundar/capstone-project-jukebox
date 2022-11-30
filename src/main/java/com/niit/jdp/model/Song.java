@@ -74,4 +74,16 @@ public class Song {
     public void setSongDuration(double songDuration) {
         this.songDuration = songDuration;
     }
+
+    @Override
+    public String toString() {
+        return "Song{" +
+                "songId=" + songId +
+                ", songName='" + songName + '\'' +
+                ", genre='" + genre + '\'' +
+                ", artist='" + artist + '\'' +
+                ", language='" + language + '\'' +
+                ", songDuration=" + songDuration +
+                '}';
+    }
 }
