@@ -9,4 +9,6 @@ package com.niit.jdp.service;
 
 public class DatabaseService {
     private static final String URL = "jdbc:mysql://localhost:3306/songs";
+    private static final String userName = "root";
+    private static final String password = "root";
 }
