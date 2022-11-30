@@ -28,4 +28,13 @@ public class Playlist {
     public void setSongId(int songId) {
         this.songId = songId;
     }
+
+    @Override
+    public String toString() {
+        return "Playlist{" +
+                "songId=" + songId +
+                ", playlistId=" + playlistId +
+                ", playlistName='" + playlistName + '\'' +
+                '}';
+    }
 }
