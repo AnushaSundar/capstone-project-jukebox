@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3fd95403-ad27-4af6-a7d5-f8c74b5ae86e" name="Changes" comment="added displaySongs() to PlaylistRepository.java">
+    <list default="true" id="3fd95403-ad27-4af6-a7d5-f8c74b5ae86e" name="Changes" comment="added play() to MusicPlayerService.java">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/service/MusicPlayerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/service/MusicPlayerService.java" afterDir="false" />
     </list>
@@ -246,7 +246,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669812540675</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="added play() to MusicPlayerService.java">
+      <created>1669868517239</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1669868517239</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -261,7 +268,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="created DatabaseService.java" />
     <MESSAGE value="created MusicPlayerService.java" />
     <MESSAGE value="created Song.java" />
     <MESSAGE value="created Playlist.java" />
@@ -286,7 +292,8 @@
     <MESSAGE value="added playSong() to SongRepository.java" />
     <MESSAGE value="added searchSongByArtistLanguageGenre() to SongRepository.java" />
     <MESSAGE value="added displaySongs() to PlaylistRepository.java" />
-    <option name="LAST_COMMIT_MESSAGE" value="added displaySongs() to PlaylistRepository.java" />
+    <MESSAGE value="added play() to MusicPlayerService.java" />
+    <option name="LAST_COMMIT_MESSAGE" value="added play() to MusicPlayerService.java" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

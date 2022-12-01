@@ -12,11 +12,15 @@ import java.io.File;
 import java.io.IOException;
 
 public class MusicPlayerService {
+    File file;
+    AudioInputStream audioInputStream;
+    Clip clip;
+
     public void play(String path) {
-        File file = new File(path);
+        file = new File(path);
         try {
-            AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(file);
-            Clip clip = AudioSystem.getClip();
+            audioInputStream = AudioSystem.getAudioInputStream(file);
+            clip = AudioSystem.getClip();
             clip.open(audioInputStream);
             clip.start();
             Thread.sleep(clip.getMicrosecondLength() / 1000L);
@@ -25,4 +29,5 @@ public class MusicPlayerService {
             exception.printStackTrace();
         }
     }
+
 }
