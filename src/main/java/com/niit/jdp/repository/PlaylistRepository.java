@@ -7,16 +7,19 @@
 
 package com.niit.jdp.repository;
 
-import java.util.Scanner;
+import com.niit.jdp.service.DatabaseService;
+
+import java.sql.Connection;
+import java.sql.SQLException;
 
 public class PlaylistRepository {
+    Connection connection;
+
+    public PlaylistRepository() throws SQLException {
+        connection = new DatabaseService().getConnectionToDatabase();
+    }
+
     public void createPlaylist() {
-        System.out.println("Create your playlist here");
-        System.out.println("Enter your playlist Name : ");
-        Scanner scanner = new Scanner(System.in);
-        String playlistName = scanner.next();
-        System.out.println("Enter the song Id ");
-        int songId = scanner.nextInt();
 
     }
 

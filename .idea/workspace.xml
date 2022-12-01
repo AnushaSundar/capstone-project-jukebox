@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3fd95403-ad27-4af6-a7d5-f8c74b5ae86e" name="Changes" comment="created playOneSong() in SongRepository.java">
+    <list default="true" id="3fd95403-ad27-4af6-a7d5-f8c74b5ae86e" name="Changes" comment="added getter and setter methods for playlistName and getter method for playlistId">
       <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/repository/PlaylistRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/repository/PlaylistRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/repository/SongRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/repository/SongRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -364,7 +363,21 @@
       <option name="project" value="LOCAL" />
       <updated>1669878074833</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="added one more parameterized constructor for songId and playlistName">
+      <created>1669878630319</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1669878630319</updated>
+    </task>
+    <task id="LOCAL-00046" summary="added getter and setter methods for playlistName and getter method for playlistId">
+      <created>1669878715241</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1669878715241</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -379,8 +392,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added fields to Playlist.java" />
-    <MESSAGE value="added no-args and parameterized constructors to Playlist.java" />
     <MESSAGE value="added getter and setter methods to Playlist.java" />
     <MESSAGE value="added toString methods to Playlist.java" />
     <MESSAGE value="added equals() and hashCode() to Playlist.java" />
@@ -404,7 +415,9 @@
     <MESSAGE value="defined searchSongByArtistLanguageGenre() in SongRepository.java" />
     <MESSAGE value="added field album and modified constructor,toString(), equals() and hashCode() in Song.java" />
     <MESSAGE value="created playOneSong() in SongRepository.java" />
-    <option name="LAST_COMMIT_MESSAGE" value="created playOneSong() in SongRepository.java" />
+    <MESSAGE value="added one more parameterized constructor for songId and playlistName" />
+    <MESSAGE value="added getter and setter methods for playlistName and getter method for playlistId" />
+    <option name="LAST_COMMIT_MESSAGE" value="added getter and setter methods for playlistName and getter method for playlistId" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
