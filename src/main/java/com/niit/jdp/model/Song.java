@@ -16,6 +16,7 @@ public class Song {
     private String artist;
     private String language;
     private double songDuration;
+    private String album;
     private String songPath;
 
     public Song() {
@@ -27,6 +28,7 @@ public class Song {
                 String artist,
                 String language,
                 double songDuration,
+                String album,
                 String songPath) {
         this.songId = songId;
         this.songName = songName;
@@ -34,6 +36,7 @@ public class Song {
         this.artist = artist;
         this.language = language;
         this.songDuration = songDuration;
+        this.album = album;
         this.songPath = songPath;
     }
 
@@ -85,6 +88,14 @@ public class Song {
         this.songDuration = songDuration;
     }
 
+    public String getAlbum() {
+        return album;
+    }
+
+    public void setAlbum(String album) {
+        this.album = album;
+    }
+
     public String getSongPath() {
         return songPath;
     }
@@ -102,6 +113,7 @@ public class Song {
                 ", artist='" + artist + '\'' +
                 ", language='" + language + '\'' +
                 ", songDuration=" + songDuration +
+                ", album='" + album + '\'' +
                 ", songPath='" + songPath + '\'' +
                 '}';
     }
@@ -111,11 +123,11 @@ public class Song {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Song song = (Song) o;
-        return songId == song.songId && Double.compare(song.songDuration, songDuration) == 0 && Objects.equals(songName, song.songName) && Objects.equals(genre, song.genre) && Objects.equals(artist, song.artist) && Objects.equals(language, song.language) && Objects.equals(songPath, song.songPath);
+        return songId == song.songId && Double.compare(song.songDuration, songDuration) == 0 && Objects.equals(songName, song.songName) && Objects.equals(genre, song.genre) && Objects.equals(artist, song.artist) && Objects.equals(language, song.language) && Objects.equals(album, song.album) && Objects.equals(songPath, song.songPath);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(songId, songName, genre, artist, language, songDuration, songPath);
+        return Objects.hash(songId, songName, genre, artist, language, songDuration, album, songPath);
     }
 }
