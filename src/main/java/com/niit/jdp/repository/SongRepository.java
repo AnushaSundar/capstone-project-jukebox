@@ -11,7 +11,10 @@ import com.niit.jdp.model.Song;
 import com.niit.jdp.service.DatabaseService;
 
 import java.sql.Connection;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.List;
 
 public class SongRepository {
@@ -24,7 +27,29 @@ public class SongRepository {
     }
 
     public List<Song> displaySongs() {
-
+        List<Song> songList = new ArrayList<>();
+        System.out.println("Song list ");
+        System.out.println();
+        String selectQuery = "select * from `songs`.`song`;";
+        try {
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery(selectQuery);
+            while (resultSet.next()) {
+                int songId = resultSet.getInt("song_id");
+                String songName = resultSet.getString("song_name");
+                String genre = resultSet.getString("genre");
+                String artist = resultSet.getString("artist");
+                double songDuration = resultSet.getDouble("song_duration");
+                String language = resultSet.getString("language");
+                String album = resultSet.getString("album");
+                String songPath = resultSet.getString("song_path");
+                Song song = new Song(songId, songName, genre, artist, language, songDuration, songPath);
+                songList.add(song);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return songList;
     }
 
     public void playSong() {
