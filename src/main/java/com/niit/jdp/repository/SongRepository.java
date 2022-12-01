@@ -85,6 +85,13 @@ public class SongRepository {
         return songSortedList;
     }
 
+    public void displaySortedList(List<Song> songList) {
+        System.out.println("Song you searched");
+        for (Song song : songList) {
+            System.out.println(song);
+        }
+    }
+
     public void playOneSong(int songId) {
         for (Song song : songList) {
             if (song.getSongId() == songId) {

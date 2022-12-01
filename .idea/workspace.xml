@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3fd95403-ad27-4af6-a7d5-f8c74b5ae86e" name="Changes" comment="added deleteSongFromPlaylist() in PlaylistRepository.java">
+    <list default="true" id="3fd95403-ad27-4af6-a7d5-f8c74b5ae86e" name="Changes" comment="added playSongFromPlaylist() in PlaylistRepository.java">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/repository/PlaylistRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/repository/PlaylistRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/repository/SongRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/repository/SongRepository.java" afterDir="false" />
     </list>
@@ -56,13 +57,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1669808880905</updated>
-    </task>
-    <task id="LOCAL-00005" summary="created MusicPlayerService.java">
-      <created>1669809830760</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1669809830760</updated>
     </task>
     <task id="LOCAL-00006" summary="created Song.java">
       <created>1669809933102</created>
@@ -400,7 +394,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669886205464</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="added playSongFromPlaylist() in PlaylistRepository.java">
+      <created>1669887756920</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1669887756920</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -415,7 +416,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added play() to MusicPlayerService.java" />
     <MESSAGE value="added fields to MusicPlayerService.java" />
     <MESSAGE value="create song directory and add the songs" />
     <MESSAGE value="added field songPath to Song.java" />
@@ -440,7 +440,8 @@
     <MESSAGE value="added displaySongList() in SongRepository.java" />
     <MESSAGE value="defined displayPlaylist() in PlaylistRepository.java" />
     <MESSAGE value="added deleteSongFromPlaylist() in PlaylistRepository.java" />
-    <option name="LAST_COMMIT_MESSAGE" value="added deleteSongFromPlaylist() in PlaylistRepository.java" />
+    <MESSAGE value="added playSongFromPlaylist() in PlaylistRepository.java" />
+    <option name="LAST_COMMIT_MESSAGE" value="added playSongFromPlaylist() in PlaylistRepository.java" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

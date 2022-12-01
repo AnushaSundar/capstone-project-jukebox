@@ -60,8 +60,12 @@ public class PlaylistRepository {
                 playlists.add(playlist);
             }
             System.out.println("Your Playlist");
-            for (Playlist eachPlaylist : playlists) {
-                System.out.println(eachPlaylist);
+            if (!playlists.isEmpty()) {
+                for (Playlist eachPlaylist : playlists) {
+                    System.out.println(eachPlaylist);
+                }
+            } else {
+                System.err.println("Your Playlist Is Empty");
             }
         } catch (SQLException e) {
             e.printStackTrace();
