@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3fd95403-ad27-4af6-a7d5-f8c74b5ae86e" name="Changes" comment="create song directory and add the songs">
+    <list default="true" id="3fd95403-ad27-4af6-a7d5-f8c74b5ae86e" name="Changes" comment="added getter and setter for songPath instance variable in Song.java">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/model/Song.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/model/Song.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -273,7 +272,28 @@
       <option name="project" value="LOCAL" />
       <updated>1669870903464</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="added field songPath to Song.java">
+      <created>1669874149038</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1669874149038</updated>
+    </task>
+    <task id="LOCAL-00033" summary="added songPath parameter to parameterized constructor in Song.java">
+      <created>1669874242041</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1669874242041</updated>
+    </task>
+    <task id="LOCAL-00034" summary="added getter and setter for songPath instance variable in Song.java">
+      <created>1669874394801</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1669874394801</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -288,9 +308,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="created Playlist.java" />
-    <MESSAGE value="created SongRepository.java" />
-    <MESSAGE value="created PlaylistRepository.java" />
     <MESSAGE value="added field url to DatabaseService.java" />
     <MESSAGE value="added field userName and password to DatabaseService.java" />
     <MESSAGE value="imported Connection interface" />
@@ -313,7 +330,10 @@
     <MESSAGE value="added play() to MusicPlayerService.java" />
     <MESSAGE value="added fields to MusicPlayerService.java" />
     <MESSAGE value="create song directory and add the songs" />
-    <option name="LAST_COMMIT_MESSAGE" value="create song directory and add the songs" />
+    <MESSAGE value="added field songPath to Song.java" />
+    <MESSAGE value="added songPath parameter to parameterized constructor in Song.java" />
+    <MESSAGE value="added getter and setter for songPath instance variable in Song.java" />
+    <option name="LAST_COMMIT_MESSAGE" value="added getter and setter for songPath instance variable in Song.java" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
