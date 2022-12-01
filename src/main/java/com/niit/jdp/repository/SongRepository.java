@@ -25,7 +25,7 @@ public class SongRepository {
         connection = databaseService.getConnectionToDatabase();
     }
 
-    public List<Song> getAllSongs() {
+    private List<Song> getAllSongs() {
         songList = new ArrayList<>();
         String selectQuery = "select * from `songs`.`song`;";
         try (Statement statement = connection.createStatement()) {
@@ -48,7 +48,14 @@ public class SongRepository {
         return songList;
     }
 
-    public void playAllSong(List<Song> songList) {
+    public void displaySongList() {
+        System.out.println("Songs For You TO Enjoy");
+        for (Song song : songList) {
+            System.out.println(song);
+        }
+    }
+
+    public void playAllSong() {
         for (Song song : songList) {
             new MusicPlayerService().play(song.getSongPath());
         }
