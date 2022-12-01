@@ -21,13 +21,14 @@ public class Song {
     public Song() {
     }
 
-    public Song(int songId, String songName, String genre, String artist, String language, double songDuration) {
+    public Song(int songId, String songName, String genre, String artist, String language, double songDuration, String songPath) {
         this.songId = songId;
         this.songName = songName;
         this.genre = genre;
         this.artist = artist;
         this.language = language;
         this.songDuration = songDuration;
+        this.songPath = songPath;
     }
 
     public int getSongId() {
