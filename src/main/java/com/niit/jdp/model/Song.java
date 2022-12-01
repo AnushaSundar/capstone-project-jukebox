@@ -16,6 +16,7 @@ public class Song {
     private String artist;
     private String language;
     private double songDuration;
+    private String songPath;
 
     public Song() {
     }
