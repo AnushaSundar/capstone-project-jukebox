@@ -49,7 +49,8 @@ public class SongRepository {
 
     public void displaySongList() {
         System.out.println("Songs For You TO Enjoy");
-        Collections.sort(songList, (Song o1, Song o2) -> String.CASE_INSENSITIVE_ORDER.compare(o1.getSongName(), o2.getSongName());
+        Collections.sort(songList,
+                (Song o1, Song o2) -> String.CASE_INSENSITIVE_ORDER.compare(o1.getSongName(), o2.getSongName()));
         for (Song song : songList) {
             System.out.println(song);
         }
@@ -89,7 +90,8 @@ public class SongRepository {
 
     public void displaySortedList(List<Song> songList) {
         System.out.println("Song you searched");
-        Collections.sort(songList, (Song o1, Song o2) -> String.CASE_INSENSITIVE_ORDER.compare(o1.getSongName(), o2.getSongName());
+        Collections.sort(songList,
+                (Song o1, Song o2) -> String.CASE_INSENSITIVE_ORDER.compare(o1.getSongName(), o2.getSongName()));
         for (Song song : songList) {
             System.out.println(song);
         }

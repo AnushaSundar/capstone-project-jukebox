@@ -20,9 +20,27 @@ import java.util.Scanner;
 public class PlaylistRepository {
     Connection connection;
     Scanner scanner = new Scanner(System.in);
-    List<Playlist> playlists;
+
     public PlaylistRepository() throws SQLException {
         connection = new DatabaseService().getConnectionToDatabase();
+    }
+
+    public List<Playlist> getAllSongsFromPlaylist() {
+        List<Playlist> playlists = new ArrayList<>();
+        String selectQuery = "select * from `songs`.`playlist`;";
+        try (Statement statement = connection.createStatement()) {
+            ResultSet resultSet = statement.executeQuery(selectQuery);
+            while (resultSet.next()) {
+                int songId = resultSet.getInt("song_id");
+                int playlistId = resultSet.getInt("playlist_id");
+                String playlistName = resultSet.getString("playlist_name");
+                Playlist playlist = new Playlist(songId, playlistId, playlistName);
+                playlists.add(playlist);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return playlists;
     }
 
     public void createPlaylist() {
@@ -47,8 +65,7 @@ public class PlaylistRepository {
         }
     }
 
-    public void displayPlaylist() {
-        playlists = new ArrayList<>();
+    public void displayPlaylist(List<Playlist> playlists) {
         String selectQuery = "select * from `songs`.`playlist`;";
         try (Statement statement = connection.createStatement()) {
             ResultSet resultSet = statement.executeQuery(selectQuery);
