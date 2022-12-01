@@ -36,6 +36,18 @@ public class Playlist {
         this.songId = songId;
     }
 
+    public int getPlaylistId() {
+        return playlistId;
+    }
+
+    public String getPlaylistName() {
+        return playlistName;
+    }
+
+    public void setPlaylistName(String playlistName) {
+        this.playlistName = playlistName;
+    }
+
     @Override
     public String toString() {
         return "Playlist{" +
