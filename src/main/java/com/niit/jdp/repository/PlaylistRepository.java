@@ -10,10 +10,7 @@ package com.niit.jdp.repository;
 import com.niit.jdp.model.Playlist;
 import com.niit.jdp.service.DatabaseService;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -47,9 +44,24 @@ public class PlaylistRepository {
         }
     }
 
-    public void displaySongs() {
+    public void displayPlaylist() {
         List<Playlist> playlists = new ArrayList<>();
-        String SelectQuery = "select * from `songs`.`playlist`;";
-        Statement
+        String selectQuery = "select * from `songs`.`playlist`;";
+        try (Statement statement = connection.createStatement()) {
+            ResultSet resultSet = statement.executeQuery(selectQuery);
+            while (resultSet.next()) {
+                int songId = resultSet.getInt("song_id");
+                int playlistId = resultSet.getInt("playlist_id");
+                String playlistName = resultSet.getString("playlist_name");
+                Playlist playlist = new Playlist(songId, playlistId, playlistName);
+                playlists.add(playlist);
+            }
+            System.out.println("Your Playlist");
+            for (Playlist eachPlaylist : playlists) {
+                System.out.println(eachPlaylist);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }
