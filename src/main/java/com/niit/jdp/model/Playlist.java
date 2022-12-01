@@ -17,6 +17,11 @@ public class Playlist {
     public Playlist() {
     }
 
+    public Playlist(int songId, String playlistName) {
+        this.songId = songId;
+        this.playlistName = playlistName;
+    }
+
     public Playlist(int songId, int playlistId, String playlistName) {
         this.songId = songId;
         this.playlistId = playlistId;

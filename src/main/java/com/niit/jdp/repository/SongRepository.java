@@ -51,7 +51,6 @@ public class SongRepository {
     public void playAllSong() {
         for (Song song : songList) {
             new MusicPlayerService().play(song.getSongPath());
-            ;
         }
         System.out.println("Song is playing");
     }
