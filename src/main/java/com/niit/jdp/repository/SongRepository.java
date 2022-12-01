@@ -39,7 +39,7 @@ public class SongRepository {
                 String language = resultSet.getString("language");
                 String album = resultSet.getString("album");
                 String songPath = resultSet.getString("song_path");
-                Song song = new Song(songId, songName, genre, artist, language, songDuration, songPath);
+                Song song = new Song(songId, songName, genre, artist, language, songDuration, album, songPath);
                 songList.add(song);
             }
         } catch (SQLException e) {
@@ -48,10 +48,10 @@ public class SongRepository {
         return songList;
     }
 
-    public void playSong() {
-        MusicPlayerService musicPlayerService = new MusicPlayerService();
+    public void playAllSong() {
         for (Song song : songList) {
-            musicPlayerService.play(song.getSongPath());
+            new MusicPlayerService().play(song.getSongPath());
+            ;
         }
         System.out.println("Song is playing");
     }
@@ -72,12 +72,21 @@ public class SongRepository {
                 String language = resultSet.getString("language");
                 String album = resultSet.getString("album");
                 String songPath = resultSet.getString("song_path");
-                Song song = new Song(songId, songName, genre, artist, language, songDuration, songPath);
+                Song song = new Song(songId, songName, genre, artist, language, songDuration, album, songPath);
                 songSortedList.add(song);
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
         return songSortedList;
+    }
+
+    public void playOneSong(int songId) {
+        for (Song song : songList) {
+            if (song.getSongId() == songId) {
+                new MusicPlayerService().play(song.getSongPath());
+            }
+        }
+        System.out.println("The song you have selected is playing");
     }
 }
