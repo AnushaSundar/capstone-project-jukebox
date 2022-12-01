@@ -48,7 +48,7 @@ public class SongRepository {
         return songList;
     }
 
-    public void playAllSong() {
+    public void playAllSong(List<Song> songList) {
         for (Song song : songList) {
             new MusicPlayerService().play(song.getSongPath());
         }
