@@ -79,6 +79,14 @@ public class Song {
         this.songDuration = songDuration;
     }
 
+    public String getSongPath() {
+        return songPath;
+    }
+
+    public void setSongPath(String songPath) {
+        this.songPath = songPath;
+    }
+
     @Override
     public String toString() {
         return "Song{" +
