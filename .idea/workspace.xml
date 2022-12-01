@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3fd95403-ad27-4af6-a7d5-f8c74b5ae86e" name="Changes" comment="added getter and setter methods for playlistName and getter method for playlistId">
+    <list default="true" id="3fd95403-ad27-4af6-a7d5-f8c74b5ae86e" name="Changes" comment="added no-args constructor and established connection&#10;to PlaylistRepository.java">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/repository/PlaylistRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/repository/PlaylistRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -377,7 +378,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669878715241</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="added no-args constructor and established connection&#10;to PlaylistRepository.java">
+      <created>1669879435706</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1669879435706</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -392,7 +400,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added getter and setter methods to Playlist.java" />
     <MESSAGE value="added toString methods to Playlist.java" />
     <MESSAGE value="added equals() and hashCode() to Playlist.java" />
     <MESSAGE value="added displaySongs.java to SongRepository.java" />
@@ -417,7 +424,8 @@
     <MESSAGE value="created playOneSong() in SongRepository.java" />
     <MESSAGE value="added one more parameterized constructor for songId and playlistName" />
     <MESSAGE value="added getter and setter methods for playlistName and getter method for playlistId" />
-    <option name="LAST_COMMIT_MESSAGE" value="added getter and setter methods for playlistName and getter method for playlistId" />
+    <MESSAGE value="added no-args constructor and established connection&#10;to PlaylistRepository.java" />
+    <option name="LAST_COMMIT_MESSAGE" value="added no-args constructor and established connection&#10;to PlaylistRepository.java" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
