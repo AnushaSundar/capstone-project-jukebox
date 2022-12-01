@@ -102,6 +102,7 @@ public class Song {
                 ", artist='" + artist + '\'' +
                 ", language='" + language + '\'' +
                 ", songDuration=" + songDuration +
+                ", songPath='" + songPath + '\'' +
                 '}';
     }
 
