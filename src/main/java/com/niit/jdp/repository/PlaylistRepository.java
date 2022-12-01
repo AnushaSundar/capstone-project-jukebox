@@ -8,7 +8,9 @@
 package com.niit.jdp.repository;
 
 import com.niit.jdp.model.Playlist;
+import com.niit.jdp.model.Song;
 import com.niit.jdp.service.DatabaseService;
+import com.niit.jdp.service.MusicPlayerService;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -18,6 +20,7 @@ import java.util.Scanner;
 public class PlaylistRepository {
     Connection connection;
     Scanner scanner = new Scanner(System.in);
+    List<Playlist> playlists;
     public PlaylistRepository() throws SQLException {
         connection = new DatabaseService().getConnectionToDatabase();
     }
@@ -45,7 +48,7 @@ public class PlaylistRepository {
     }
 
     public void displayPlaylist() {
-        List<Playlist> playlists = new ArrayList<>();
+        playlists = new ArrayList<>();
         String selectQuery = "select * from `songs`.`playlist`;";
         try (Statement statement = connection.createStatement()) {
             ResultSet resultSet = statement.executeQuery(selectQuery);
@@ -76,6 +79,36 @@ public class PlaylistRepository {
                 System.out.println("\u001B[32m Successfully deleted \u001B[0m");
             } else {
 
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void playSongFromPlaylist() {
+        System.out.println("Enter the playlist you want to listen : ");
+        String playlistName = scanner.next();
+        String selectQuery = "select * from `songs`.`playlist` where(`playlist_name`=?);";
+        List<Playlist> playlists1 = new ArrayList<>();
+        try (PreparedStatement preparedStatement = connection.prepareStatement(selectQuery)) {
+            preparedStatement.setString(1, playlistName);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                int songId = resultSet.getInt("song_id");
+                int playlistId = resultSet.getInt("playlist_id");
+                String Name = resultSet.getString("playlist_name");
+                Playlist playlist = new Playlist(songId, playlistId, Name);
+                playlists1.add(playlist);
+            }
+            for (Playlist play : playlists1) {
+                int songId = play.getSongId();
+                SongRepository songRepository = new SongRepository();
+                List<Song> allSongs = songRepository.getAllSongs();
+                for (Song song : allSongs) {
+                    if (song.getSongId() == songId) {
+                        new MusicPlayerService().play(song.getSongPath());
+                    }
+                }
             }
         } catch (SQLException e) {
             e.printStackTrace();

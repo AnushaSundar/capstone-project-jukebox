@@ -23,7 +23,7 @@ public class SongRepository {
         connection = new DatabaseService().getConnectionToDatabase();
     }
 
-    private List<Song> getAllSongs() {
+    public List<Song> getAllSongs() {
         songList = new ArrayList<>();
         String selectQuery = "select * from `songs`.`song`;";
         try (Statement statement = connection.createStatement()) {
