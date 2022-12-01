@@ -17,7 +17,7 @@ import java.util.Scanner;
 
 public class PlaylistRepository {
     Connection connection;
-
+    Scanner scanner = new Scanner(System.in);
     public PlaylistRepository() throws SQLException {
         connection = new DatabaseService().getConnectionToDatabase();
     }
@@ -25,10 +25,10 @@ public class PlaylistRepository {
     public void createPlaylist() {
         System.out.println("Create your playlist here");
         System.out.println("Enter your playlist Name : ");
-        Scanner scanner = new Scanner(System.in);
         String playlistName = scanner.next();
         System.out.println("Enter the song Id ");
         int songId = scanner.nextInt();
+        scanner.close();
         String insertQuery = "insert into `songs`.`song`(`song_id`,`playlist_name`) values(?,?)";
         try (PreparedStatement preparedStatement = connection.prepareStatement(insertQuery)) {
             preparedStatement.setInt(1, songId);
@@ -59,6 +59,23 @@ public class PlaylistRepository {
             System.out.println("Your Playlist");
             for (Playlist eachPlaylist : playlists) {
                 System.out.println(eachPlaylist);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void deleteSongFromPlaylist() {
+        System.out.println("Enter the song Id : ");
+        int songId = scanner.nextInt();
+        String deleteQuery = "delete from `songs`.`playlist` where `song_id`=?;";
+        try (PreparedStatement preparedStatement = connection.prepareStatement(deleteQuery)) {
+            preparedStatement.setInt(1, songId);
+            int rowsDeleted = preparedStatement.executeUpdate();
+            if (rowsDeleted > 0) {
+                System.out.println("\u001B[32m Successfully deleted \u001B[0m");
+            } else {
+
             }
         } catch (SQLException e) {
             e.printStackTrace();
