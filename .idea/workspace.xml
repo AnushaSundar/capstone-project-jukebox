@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3fd95403-ad27-4af6-a7d5-f8c74b5ae86e" name="Changes" comment="added no-args constructor to SongRepository.java and established connection">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/model/Song.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/model/Song.java" afterDir="false" />
+    <list default="true" id="3fd95403-ad27-4af6-a7d5-f8c74b5ae86e" name="Changes" comment="defined displaySongs() in SongRepository.java">
       <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/repository/SongRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/repository/SongRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -316,7 +314,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669875792548</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="defined displaySongs() in SongRepository.java">
+      <created>1669876396985</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1669876396985</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -331,7 +336,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added connect() to DatabaseService.java" />
     <MESSAGE value="added getConnectionToDatabase() to DatabaseService.java" />
     <MESSAGE value="added fields to Song.java" />
     <MESSAGE value="added no-args and parameterized constructor to Song.java" />
@@ -356,7 +360,8 @@
     <MESSAGE value="created Songs-Database.sql" />
     <MESSAGE value="added stop() to MusicPlayerService.java" />
     <MESSAGE value="added no-args constructor to SongRepository.java and established connection" />
-    <option name="LAST_COMMIT_MESSAGE" value="added no-args constructor to SongRepository.java and established connection" />
+    <MESSAGE value="defined displaySongs() in SongRepository.java" />
+    <option name="LAST_COMMIT_MESSAGE" value="defined displaySongs() in SongRepository.java" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

@@ -9,6 +9,7 @@ package com.niit.jdp.repository;
 
 import com.niit.jdp.model.Song;
 import com.niit.jdp.service.DatabaseService;
+import com.niit.jdp.service.MusicPlayerService;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -20,6 +21,7 @@ import java.util.List;
 public class SongRepository {
     DatabaseService databaseService;
     Connection connection;
+    List<Song> songList;
 
     public SongRepository() throws SQLException {
         databaseService = new DatabaseService();
@@ -27,9 +29,7 @@ public class SongRepository {
     }
 
     public List<Song> displaySongs() {
-        List<Song> songList = new ArrayList<>();
-        System.out.println("Song list ");
-        System.out.println();
+        songList = new ArrayList<>();
         String selectQuery = "select * from `songs`.`song`;";
         try {
             Statement statement = connection.createStatement();
@@ -53,6 +53,10 @@ public class SongRepository {
     }
 
     public void playSong() {
+        MusicPlayerService musicPlayerService = new MusicPlayerService();
+        for (Song song : songList) {
+            musicPlayerService.play(song.getSongPath());
+        }
     }
 
     public void searchSongByArtistLanguageGenre() {
