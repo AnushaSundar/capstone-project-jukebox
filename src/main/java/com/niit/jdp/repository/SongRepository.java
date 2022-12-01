@@ -21,11 +21,11 @@ public class SongRepository {
     List<Song> songList;
 
     public SongRepository() throws SQLException {
+        songList = new ArrayList<>();
         connection = new DatabaseService().getConnectionToDatabase();
     }
 
     public List<Song> getAllSongs() {
-        songList = new ArrayList<>();
         String selectQuery = "select * from `songs`.`song`;";
         try (Statement statement = connection.createStatement()) {
             ResultSet resultSet = statement.executeQuery(selectQuery);
@@ -47,7 +47,7 @@ public class SongRepository {
         return songList;
     }
 
-    public void displaySongList() {
+    public void displaySongList(List<Song> songList) {
         System.out.println("Songs For You TO Enjoy");
         Collections.sort(songList,
                 (Song o1, Song o2) -> String.CASE_INSENSITIVE_ORDER.compare(o1.getSongName(), o2.getSongName()));
@@ -56,19 +56,18 @@ public class SongRepository {
         }
     }
 
-    public void playAllSong() {
+    public void playAllSong(List<Song> songList) {
         for (Song song : songList) {
             new MusicPlayerService().play(song.getSongPath());
         }
         System.out.println("Song is playing");
     }
 
-    public List<Song> searchSongByArtistLanguageGenre(String columnName, String value) {
+    public List<Song> searchSongByLanguage(String value) {
         List<Song> songSortedList = new ArrayList<>();
-        String selectQuery = "select * from `songs`.`song` where (?= ?);";
+        String selectQuery = "select * from `songs`.`song` where (`language`= ?);";
         try (PreparedStatement preparedStatement = connection.prepareStatement(selectQuery)) {
-            preparedStatement.setString(1, columnName);
-            preparedStatement.setString(2, value);
+            preparedStatement.setString(1, value);
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
                 int songId = resultSet.getInt("song_id");
@@ -88,21 +87,14 @@ public class SongRepository {
         return songSortedList;
     }
 
-    public void displaySortedList(List<Song> songList) {
-        System.out.println("Song you searched");
-        Collections.sort(songList,
-                (Song o1, Song o2) -> String.CASE_INSENSITIVE_ORDER.compare(o1.getSongName(), o2.getSongName()));
-        for (Song song : songList) {
-            System.out.println(song);
-        }
-    }
+
 
     public void playOneSong(int songId) {
         for (Song song : songList) {
             if (song.getSongId() == songId) {
+                System.out.println("The song you have selected is playing");
                 new MusicPlayerService().play(song.getSongPath());
             }
         }
-        System.out.println("The song you have selected is playing");
     }
 }

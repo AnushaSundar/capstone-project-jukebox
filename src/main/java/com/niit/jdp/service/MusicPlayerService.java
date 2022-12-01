@@ -30,9 +30,16 @@ public class MusicPlayerService {
         }
     }
 
-    public void stop() {
-        clip.stop();
-        clip.close();
+    public void stop(String path) {
+        file = new File(path);
+        try {
+            audioInputStream = AudioSystem.getAudioInputStream(file);
+            clip = AudioSystem.getClip();
+            clip.open(audioInputStream);
+            clip.stop();
+        } catch (UnsupportedAudioFileException | IOException | LineUnavailableException exception) {
+            exception.printStackTrace();
+        }
     }
 
 }
