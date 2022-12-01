@@ -7,11 +7,15 @@
 
 package com.niit.jdp.repository;
 
+import com.niit.jdp.model.Playlist;
 import com.niit.jdp.service.DatabaseService;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class PlaylistRepository {
@@ -44,5 +48,8 @@ public class PlaylistRepository {
     }
 
     public void displaySongs() {
+        List<Playlist> playlists = new ArrayList<>();
+        String SelectQuery = "select * from `songs`.`playlist`;";
+        Statement
     }
 }
