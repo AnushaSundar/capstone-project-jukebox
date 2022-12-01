@@ -29,5 +29,9 @@ public class MusicPlayerService {
             exception.printStackTrace();
         }
     }
-   
+
+    public void stop() {
+        clip.stop();
+        clip.close();
+    }
 }
