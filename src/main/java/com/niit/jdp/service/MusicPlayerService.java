@@ -37,6 +37,7 @@ public class MusicPlayerService {
             clip = AudioSystem.getClip();
             clip.open(audioInputStream);
             clip.stop();
+            clip.setFramePosition(0);
         } catch (UnsupportedAudioFileException | IOException | LineUnavailableException exception) {
             exception.printStackTrace();
         }
