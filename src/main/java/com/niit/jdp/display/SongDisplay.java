@@ -25,5 +25,11 @@ public class SongDisplay {
         System.out.println("5.Play song");
         System.out.println("6.Go to playlist");
         System.out.println("7.create Playlist");
+        System.out.println("8.Exit");
+    }
+
+    public void display() {
+        System.out.println("1.Play song");
+        System.out.println("2.Go to Menu");
     }
 }

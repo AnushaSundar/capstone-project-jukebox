@@ -112,4 +112,8 @@ public class PlaylistRepository {
         }
         return rowDeleted > 0;
     }
+
+    public void displayPlaylist(List<Playlist> playlist) {
+        playlist.forEach(System.out::println);
+    }
 }

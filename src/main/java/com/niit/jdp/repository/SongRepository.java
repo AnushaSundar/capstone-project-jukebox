@@ -51,14 +51,19 @@ public class SongRepository {
         System.out.println("Songs For You TO Enjoy");
         Collections.sort(songList,
                 (Song o1, Song o2) -> String.CASE_INSENSITIVE_ORDER.compare(o1.getSongName(), o2.getSongName()));
-        for (Song song : songList) {
-            System.out.println(song);
-        }
+        songList.forEach(System.out::println);
     }
 
-    public void playAllSong(Song song) {
+    public void playSong(Song song) {
         new MusicPlayerService().player(song.getSongPath());
         System.out.println("You stopped the song");
+    }
+
+    public void playAllSongs(List<Song> songlist) {
+        for (Song song : songlist) {
+            new MusicPlayerService().player(song.getSongPath());
+            System.out.println("You have stopped playing");
+        }
     }
 
     public List<Song> searchSongByLanguage(String value) {
