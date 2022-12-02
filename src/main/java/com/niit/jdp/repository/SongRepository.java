@@ -88,13 +88,25 @@ public class SongRepository {
     }
 
 
-
-    public void playOneSong(int songId) {
-        for (Song song : songList) {
-            if (song.getSongId() == songId) {
-                System.out.println("The song you have selected is playing");
-                new MusicPlayerService().play(song.getSongPath());
+    public Song getSong(int songId) {
+        Song song = new Song();
+        String selectQuery = "select * from `songs`.`song` where(`song_id`=?);";
+        try (PreparedStatement preparedStatement = connection.prepareStatement(selectQuery)) {
+            preparedStatement.setInt(1, songId);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()) {
+                song.setSongId(resultSet.getInt("song_id"));
+                song.setSongName(resultSet.getString("song_name"));
+                song.setGenre(resultSet.getString("genre"));
+                song.setArtist(resultSet.getString("artist"));
+                song.setSongDuration(resultSet.getDouble("song_duration"));
+                song.setLanguage(resultSet.getString("language"));
+                song.setAlbum(resultSet.getString("album"));
+                song.setSongPath(resultSet.getString("song_path"));
             }
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
+        return song;
     }
 }
