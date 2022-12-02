@@ -6,6 +6,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.sql.SQLException;
+import java.util.List;
 
 class SongRepositoryTest {
     SongRepository songRepository;
@@ -26,7 +27,7 @@ class SongRepositoryTest {
     @Test
     void getAllSongs() {
         //arrange
-
+        List<Song> expectedResult
     }
 
     @Test

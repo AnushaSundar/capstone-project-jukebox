@@ -106,16 +106,14 @@ public class Song {
 
     @Override
     public String toString() {
-        return "Song{" +
-                "songId=" + songId +
-                ", songName='" + songName + '\'' +
-                ", genre='" + genre + '\'' +
-                ", artist='" + artist + '\'' +
-                ", language='" + language + '\'' +
-                ", songDuration=" + songDuration +
-                ", album='" + album + '\'' +
-                ", songPath='" + songPath + '\'' +
-                '}';
+        return "songId:" + songId +
+                ", songName:'" + songName + '\'' +
+                ", genre:'" + genre + '\'' +
+                ", artist:'" + artist + '\'' +
+                ", language:'" + language + '\'' +
+                ", songDuration:" + songDuration +
+                ", album:'" + album + '\'' +
+                '\'';
     }
 
     @Override
