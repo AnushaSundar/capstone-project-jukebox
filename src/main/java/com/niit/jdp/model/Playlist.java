@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Objects;
 
 public class Playlist {
-    private List<Song> songId;
+    private List<Song> songIds;
     private int playlistId;
     private String playlistName;
 
@@ -28,6 +28,18 @@ public class Playlist {
         return playlistId;
     }
 
+    public List<Song> getSongIds() {
+        return songIds;
+    }
+
+    public void setSongIds(List<Song> songIds) {
+        this.songIds = songIds;
+    }
+
+    public void setPlaylistId(int playlistId) {
+        this.playlistId = playlistId;
+    }
+
     public String getPlaylistName() {
         return playlistName;
     }
@@ -39,7 +51,7 @@ public class Playlist {
     @Override
     public String toString() {
         return "Playlist{" +
-                "songId=" + songId +
+                "songId=" + songIds +
                 ", playlistId=" + playlistId +
                 ", playlistName='" + playlistName + '\'' +
                 '}';
@@ -50,11 +62,11 @@ public class Playlist {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Playlist playlist = (Playlist) o;
-        return playlistId == playlist.playlistId && Objects.equals(songId, playlist.songId) && Objects.equals(playlistName, playlist.playlistName);
+        return playlistId == playlist.playlistId && Objects.equals(songIds, playlist.songIds) && Objects.equals(playlistName, playlist.playlistName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(songId, playlistId, playlistName);
+        return Objects.hash(songIds, playlistId, playlistName);
     }
 }
