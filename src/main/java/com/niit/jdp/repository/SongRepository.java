@@ -9,7 +9,6 @@ package com.niit.jdp.repository;
 
 import com.niit.jdp.model.Song;
 import com.niit.jdp.service.DatabaseService;
-import com.niit.jdp.service.MusicPlayerService;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -56,12 +55,12 @@ public class SongRepository {
         }
     }
 
-    public void playAllSong(List<Song> songList) {
-        for (Song song : songList) {
-            new MusicPlayerService().player(song.getSongPath());
-        }
-        System.out.println("Song is playing");
-    }
+//    public void playAllSong(List<Song> songList) {
+//        for (Song song : songList) {
+//            new MusicPlayerService().play(song.getSongPath());
+//        }
+//        System.out.println("Song is playing");
+//    }
 
     public List<Song> searchSongByLanguage(String value) {
         List<Song> songSortedList = new ArrayList<>();

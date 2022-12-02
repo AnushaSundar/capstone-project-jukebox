@@ -18,22 +18,33 @@ public class MusicPlayerService {
     long currentFrame;
     String status;
 
-    public MusicPlayerService() {
-    }
-
-    public void player(String path) {
-        file = new File(path);
+    public void play(String fileName) {
+        file = new File(fileName);
         try {
             audioInputStream = AudioSystem.getAudioInputStream(file);
             clip = AudioSystem.getClip();
             clip.open(audioInputStream);
+            clip.start();
+            status = "play";
             clip.loop(Clip.LOOP_CONTINUOUSLY);
-            Thread.sleep(clip.getMicrosecondLength() / 1000L);
-        } catch (UnsupportedAudioFileException | IOException | LineUnavailableException |
-                 InterruptedException exception) {
-            exception.printStackTrace();
+        } catch (UnsupportedAudioFileException | IOException | LineUnavailableException e) {
+            e.printStackTrace();
         }
     }
 
+    public void stop(String fileName) {
+        file = new File(fileName);
+        try {
+            audioInputStream = AudioSystem.getAudioInputStream(file);
+            clip = AudioSystem.getClip();
+            clip.open(audioInputStream);
+            clip.stop();
+            clip.close();
+            status = "stop";
+            clip.loop(Clip.LOOP_CONTINUOUSLY);
+        } catch (UnsupportedAudioFileException | IOException | LineUnavailableException e) {
+            e.printStackTrace();
+        }
+    }
 
 }
