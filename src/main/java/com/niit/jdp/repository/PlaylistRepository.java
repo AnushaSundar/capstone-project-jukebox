@@ -47,6 +47,28 @@ public class PlaylistRepository {
         return songList;
     }
 
+    public Song getASongFromPlaylist(int songId, int playlistId) {
+        Song song = new Song();
+        String selectQuery = "select * from `songs`.`playlist` where (`playlist_id`=?);";
+        try (PreparedStatement preparedStatement = connection.prepareStatement(selectQuery)) {
+            preparedStatement.setInt(1, playlistId);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                String songIds = resultSet.getString("song_id");
+                String[] songIdArray = songIds.split(",");
+                for (String song_Id : songIdArray) {
+                    Song aSong = new SongRepository().getSong(Integer.parseInt(song_Id));
+                    if (aSong.getSongId() == songId) {
+                        song = new SongRepository().getSong(aSong.getSongId());
+                    }
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return song;
+    }
+
     public Playlist createPlaylist(String playlistName) {
         Playlist playlist = new Playlist();
         String insertQuery = "insert into `songs`.`playlist`(playlist_name) values(?);";
@@ -90,6 +112,4 @@ public class PlaylistRepository {
         }
         return rowDeleted > 0;
     }
-
-
 }
