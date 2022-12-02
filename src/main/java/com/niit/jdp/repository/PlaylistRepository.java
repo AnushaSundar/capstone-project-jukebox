@@ -15,6 +15,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -27,7 +28,23 @@ public class PlaylistRepository {
     }
 
     public List<Song> getAllSongsFromPlaylist(int playlistId) {
-
+        List<Song> songList = new ArrayList<>();
+        String selectQuery = "select * from `songs`.`playlist` where (`playlist_id`=?);";
+        try (PreparedStatement preparedStatement = connection.prepareStatement(selectQuery)) {
+            preparedStatement.setInt(1, playlistId);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                String songIds = resultSet.getString("song_id");
+                String[] songIdArray = songIds.split(",");
+                for (String songId : songIdArray) {
+                    Song song = new SongRepository().getSong(Integer.parseInt(songId));
+                    songList.add(song);
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return songList;
     }
 
     public Playlist createPlaylist(String playlistName) {
