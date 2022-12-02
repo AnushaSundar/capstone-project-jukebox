@@ -79,74 +79,17 @@ public class PlaylistRepository {
         return updatedRow > 0;
     }
 
-    public void displayPlaylist(List<Playlist> playlists) {
-//        String selectQuery = "select * from `songs`.`playlist`;";
-//        try (Statement statement = connection.createStatement()) {
-//            ResultSet resultSet = statement.executeQuery(selectQuery);
-//            while (resultSet.next()) {
-//                int songId = resultSet.getInt("song_id");
-//                int playlistId = resultSet.getInt("playlist_id");
-//                String playlistName = resultSet.getString("playlist_name");
-//                Playlist playlist = new Playlist(songId, playlistId, playlistName);
-//                playlists.add(playlist);
-//            }
-//            System.out.println("Your Playlist");
-//            if (!playlists.isEmpty()) {
-//                for (Playlist eachPlaylist : playlists) {
-//                    System.out.println(eachPlaylist);
-//                }
-//            } else {
-//                System.err.println("Your Playlist Is Empty");
-//            }
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        }
-    }
-
-    public void deleteSongFromPlaylist() {
-        System.out.println("Enter the song Id : ");
-        int songId = scanner.nextInt();
-        String deleteQuery = "delete from `songs`.`playlist` where `song_id`=?;";
+    public boolean deletePlaylist(int playlistId) {
+        int rowDeleted = 0;
+        String deleteQuery = "delete from `songs`.`playlist` where `playlist_id`=?;";
         try (PreparedStatement preparedStatement = connection.prepareStatement(deleteQuery)) {
-            preparedStatement.setInt(1, songId);
-            int rowsDeleted = preparedStatement.executeUpdate();
-            if (rowsDeleted > 0) {
-                System.out.println("\u001B[32m Successfully deleted \u001B[0m");
-            } else {
-
-            }
+            preparedStatement.setInt(1, playlistId);
+            rowDeleted = preparedStatement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        return rowDeleted > 0;
     }
 
-    public void playSongFromPlaylist() {
-//        System.out.println("Enter the playlist you want to listen : ");
-//        String playlistName = scanner.next();
-//        String selectQuery = "select * from `songs`.`playlist` where(`playlist_name`=?);";
-//        List<Playlist> playlists1 = new ArrayList<>();
-//        try (PreparedStatement preparedStatement = connection.prepareStatement(selectQuery)) {
-//            preparedStatement.setString(1, playlistName);
-//            ResultSet resultSet = preparedStatement.executeQuery();
-//            while (resultSet.next()) {
-//                int songId = resultSet.getInt("song_id");
-//                int playlistId = resultSet.getInt("playlist_id");
-//                String Name = resultSet.getString("playlist_name");
-//                Playlist playlist = new Playlist(songId, playlistId, Name);
-//                playlists1.add(playlist);
-//            }
-//            for (Playlist play : playlists1) {
-//                int songId = play.getSongId();
-//                SongRepository songRepository = new SongRepository();
-//                List<Song> allSongs = songRepository.getAllSongs();
-//                for (Song song : allSongs) {
-//                    if (song.getSongId() == songId) {
-//                        new MusicPlayerService().play(song.getSongPath());
-//                    }
-//                }
-//            }
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        }
-    }
+
 }

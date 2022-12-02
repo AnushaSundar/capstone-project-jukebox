@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3fd95403-ad27-4af6-a7d5-f8c74b5ae86e" name="Changes" comment="added addSongsToPlaylist() in PlaylistRepository.java">
+    <list default="true" id="3fd95403-ad27-4af6-a7d5-f8c74b5ae86e" name="Changes" comment="modified getAllSongsFromPlaylist() in PlaylistRepository.java">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/repository/PlaylistRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/repository/PlaylistRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/repository/SongRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/repository/SongRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,20 +80,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1669808880905</updated>
-    </task>
-    <task id="LOCAL-00011" summary="added field userName and password to DatabaseService.java">
-      <created>1669811259520</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1669811259520</updated>
-    </task>
-    <task id="LOCAL-00012" summary="imported Connection interface">
-      <created>1669811383788</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1669811383788</updated>
     </task>
     <task id="LOCAL-00013" summary="added connect() to DatabaseService.java">
       <created>1669811482882</created>
@@ -424,7 +410,21 @@
       <option name="project" value="LOCAL" />
       <updated>1669955628200</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="added getSong() in SongRepository.java">
+      <created>1669957284160</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1669957284160</updated>
+    </task>
+    <task id="LOCAL-00061" summary="modified getAllSongsFromPlaylist() in PlaylistRepository.java">
+      <created>1669957444689</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1669957444689</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -439,8 +439,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="created Songs-Database.sql" />
-    <MESSAGE value="added stop() to MusicPlayerService.java" />
     <MESSAGE value="added no-args constructor to SongRepository.java and established connection" />
     <MESSAGE value="defined displaySongs() in SongRepository.java" />
     <MESSAGE value="defined playSong() in SongRepository.java" />
@@ -464,7 +462,9 @@
     <MESSAGE value="added getAllSongsFromPlaylist() in PlaylistRepository.java" />
     <MESSAGE value="changed the data type of instance Variable songId from int to list&lt;Song&gt; in Playlist.java" />
     <MESSAGE value="added addSongsToPlaylist() in PlaylistRepository.java" />
-    <option name="LAST_COMMIT_MESSAGE" value="added addSongsToPlaylist() in PlaylistRepository.java" />
+    <MESSAGE value="added getSong() in SongRepository.java" />
+    <MESSAGE value="modified getAllSongsFromPlaylist() in PlaylistRepository.java" />
+    <option name="LAST_COMMIT_MESSAGE" value="modified getAllSongsFromPlaylist() in PlaylistRepository.java" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
