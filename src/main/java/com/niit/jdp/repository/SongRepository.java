@@ -87,6 +87,29 @@ public class SongRepository {
         return songSortedList;
     }
 
+    public List<Song> searchSongByGenre(String value) {
+        List<Song> songSortedList = new ArrayList<>();
+        String selectQuery = "select * from `songs`.`song` where (`Genre`= ?);";
+        try (PreparedStatement preparedStatement = connection.prepareStatement(selectQuery)) {
+            preparedStatement.setString(1, value);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                int songId = resultSet.getInt("song_id");
+                String songName = resultSet.getString("song_name");
+                String genre = resultSet.getString("genre");
+                String artist = resultSet.getString("artist");
+                double songDuration = resultSet.getDouble("song_duration");
+                String language = resultSet.getString("language");
+                String album = resultSet.getString("album");
+                String songPath = resultSet.getString("song_path");
+                Song song = new Song(songId, songName, genre, artist, language, songDuration, album, songPath);
+                songSortedList.add(song);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return songSortedList;
+    }
 
     public Song getSong(int songId) {
         Song song = new Song();
