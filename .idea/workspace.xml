@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3fd95403-ad27-4af6-a7d5-f8c74b5ae86e" name="Changes" comment="added stop() in MusicPlayerService.java">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/model/Song.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/model/Song.java" afterDir="false" />
+    <list default="true" id="3fd95403-ad27-4af6-a7d5-f8c74b5ae86e" name="Changes" comment="changed the toString() in Playlist.Java">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/niit/jdp/repository/SongRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/niit/jdp/repository/SongRepositoryTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -60,7 +60,7 @@
       <recent name="com.niit.jdp.repository" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.SongRepositoryTest.getAllSongsFail">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.niit.jdp.Main" />
       <module name="capstone-project-jukebox" />
@@ -74,8 +74,42 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="SongRepositoryTest.getAllSongs" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="capstone-project-jukebox" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.niit.jdp.repository.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.niit.jdp.repository" />
+      <option name="MAIN_CLASS_NAME" value="com.niit.jdp.repository.SongRepositoryTest" />
+      <option name="METHOD_NAME" value="getAllSongs" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SongRepositoryTest.getAllSongsFail" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="capstone-project-jukebox" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.niit.jdp.repository.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.niit.jdp.repository" />
+      <option name="MAIN_CLASS_NAME" value="com.niit.jdp.repository.SongRepositoryTest" />
+      <option name="METHOD_NAME" value="getAllSongsFail" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.SongRepositoryTest.getAllSongsFail" />
+        <item itemvalue="JUnit.SongRepositoryTest.getAllSongs" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -88,20 +122,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1669808880905</updated>
-    </task>
-    <task id="LOCAL-00022" summary="added getter and setter methods to Playlist.java">
-      <created>1669812062907</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1669812062907</updated>
-    </task>
-    <task id="LOCAL-00023" summary="added toString methods to Playlist.java">
-      <created>1669812094829</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1669812094829</updated>
     </task>
     <task id="LOCAL-00024" summary="added equals() and hashCode() to Playlist.java">
       <created>1669812139317</created>
@@ -432,7 +452,21 @@
       <option name="project" value="LOCAL" />
       <updated>1669965266322</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL-00071" summary="changed the toString() in Song.Java">
+      <created>1669965593660</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1669965593660</updated>
+    </task>
+    <task id="LOCAL-00072" summary="changed the toString() in Playlist.Java">
+      <created>1669965667236</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1669965667236</updated>
+    </task>
+    <option name="localTasksCounter" value="73" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -447,8 +481,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added no-args constructor and established connection&#10;to PlaylistRepository.java" />
-    <MESSAGE value="added createPlaylist() in PlaylistRepository.java" />
     <MESSAGE value="changed displaySongs() name to getAllSongs() in SongRepository.java" />
     <MESSAGE value="added parameter to playAllSong() in SongRepository.java" />
     <MESSAGE value="added displaySongList() in SongRepository.java" />
@@ -472,7 +504,9 @@
     <MESSAGE value="added fields in MusicPlayerService.java" />
     <MESSAGE value="added play() in MusicPlayerService.java" />
     <MESSAGE value="added stop() in MusicPlayerService.java" />
-    <option name="LAST_COMMIT_MESSAGE" value="added stop() in MusicPlayerService.java" />
+    <MESSAGE value="changed the toString() in Song.Java" />
+    <MESSAGE value="changed the toString() in Playlist.Java" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed the toString() in Playlist.Java" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

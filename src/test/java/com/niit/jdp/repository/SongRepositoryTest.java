@@ -8,6 +8,9 @@ import org.junit.jupiter.api.Test;
 import java.sql.SQLException;
 import java.util.List;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
+
 class SongRepositoryTest {
     SongRepository songRepository;
     Song song;
@@ -26,8 +29,18 @@ class SongRepositoryTest {
 
     @Test
     void getAllSongs() {
-        //arrange
-        List<Song> expectedResult
+        //actual
+        List<Song> actual = songRepository.getAllSongs();
+        //assert
+        assertEquals(9, actual.size());
+    }
+
+    @Test
+    void getAllSongsFail() {
+        //actual
+        List<Song> actual = songRepository.getAllSongs();
+        //assert
+        assertNotEquals(8, actual.size());
     }
 
     @Test
