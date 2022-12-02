@@ -13,10 +13,10 @@ public class Main {
         try {
             SongRepository songRepository = new SongRepository();
             List<Song> allSongs = songRepository.getAllSongs();
-            System.out.println("enter the name:");
-            String name = scanner.next();
-            List<Song> songs = songRepository.searchSongByArtist(name);
-            songRepository.displaySongList(songs);
+            System.out.println("enter the songid:");
+            int name = scanner.nextInt();
+            Song song = songRepository.getSong(name);
+            songRepository.playAllSong(song);
 //            PlaylistRepository playlistRepository = new PlaylistRepository();
 //            System.out.println("Enter the playlist Id:");
 //            int playlistId = scanner.nextInt();

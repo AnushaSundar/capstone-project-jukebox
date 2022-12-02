@@ -40,26 +40,63 @@ class SongRepositoryTest {
         //actual
         List<Song> actual = songRepository.getAllSongs();
         //assert
-        assertNotEquals(8, actual.size());
-    }
-
-    @Test
-    void displaySongList() {
+        assertNotEquals(8, actual.size(), "Check the code");
     }
 
     @Test
     void searchSongByLanguage() {
+        //actual
+        List<Song> actualResult = songRepository.searchSongByLanguage("English");
+        //assert
+        assertEquals(6, actualResult.size());
+    }
+
+    @Test
+    void searchSongByLanguageFailure() {
+        //actual
+        List<Song> actualResult = songRepository.searchSongByLanguage("English");
+        //assert
+        assertNotEquals(7, actualResult.size(), "The count is incorrect");
     }
 
     @Test
     void searchSongByGenre() {
+        //actual
+        List<Song> actualResult = songRepository.searchSongByGenre("rock");
+        //assert
+        assertEquals(1, actualResult.size());
+    }
+
+    @Test
+    void searchSongByGenreFailure() {
+        //actual
+        List<Song> actualResult = songRepository.searchSongByGenre("hip hop");
+        //assert
+        assertNotEquals(7, actualResult.size(), "The count is incorrect");
     }
 
     @Test
     void searchSongByArtist() {
+        //actual
+        List<Song> actualResult = songRepository.searchSongByArtist("BTS");
+        //assert
+        assertEquals(3, actualResult.size());
+    }
+
+    @Test
+    void searchSongByArtistFailure() {
+        //actual
+        List<Song> actualResult = songRepository.searchSongByGenre("hip hop");
+        //assert
+        assertNotEquals(4, actualResult.size(), "The count is incorrect");
     }
 
     @Test
     void getSong() {
+        Song expectedResult = ;
+        //actual
+        Song actualResult = songRepository.getSong(112);
+        //assert
+        assertEquals();
     }
 }
