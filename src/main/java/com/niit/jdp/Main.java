@@ -15,7 +15,7 @@ public class Main {
             List<Song> allSongs = songRepository.getAllSongs();
             System.out.println("enter the name:");
             String name = scanner.next();
-            List<Song> songs = songRepository.searchSongByGenre(name);
+            List<Song> songs = songRepository.searchSongByArtist(name);
             songRepository.displaySongList(songs);
 //            PlaylistRepository playlistRepository = new PlaylistRepository();
 //            System.out.println("Enter the playlist Id:");
