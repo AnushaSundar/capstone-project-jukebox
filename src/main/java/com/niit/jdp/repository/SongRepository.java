@@ -58,8 +58,7 @@ public class SongRepository {
 
     public void playAllSong(Song song) {
         new MusicPlayerService().player(song.getSongPath());
-
-        System.out.println("Song is playing");
+        System.out.println("You stopped the song");
     }
 
     public List<Song> searchSongByLanguage(String value) {

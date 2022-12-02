@@ -27,9 +27,23 @@ public class MusicPlayerService {
             clip.open(audioInputStream);
             play();
             clip.loop(Clip.LOOP_CONTINUOUSLY);
-            while (true) {
-                display();
-            }
+            int choice = 0;
+            do {
+                System.out.println("1.pause");
+                System.out.println("2.resume");
+                System.out.println("3.stop");
+                System.out.println("Enter your choice");
+                Scanner scanner = new Scanner(System.in);
+                choice = scanner.nextInt();
+                switch (choice) {
+                    case 1:
+                        pause();
+                        break;
+                    case 2:
+                        resume();
+                        break;
+                }
+            } while (choice != 3);
         } catch (UnsupportedAudioFileException | IOException | LineUnavailableException e) {
             e.printStackTrace();
         }
@@ -41,14 +55,12 @@ public class MusicPlayerService {
     }
 
     public void pause() {
-        this.currentFrame = this.clip.getMicrosecondLength();
+        this.currentFrame = clip.getMicrosecondLength();
         clip.stop();
         status = "paused";
     }
 
-    public void resume() {
-        clip.close();
-        clip.setMicrosecondPosition(currentFrame);
+    public void resume() throws LineUnavailableException, IOException {
         this.play();
     }
 
@@ -58,24 +70,9 @@ public class MusicPlayerService {
         clip.close();
     }
 
-    public void display() {
-        System.out.println("1.stop");
-        System.out.println("2.pause");
-        System.out.println("3.play");
-        System.out.println("4.exit");
-        System.out.println("Enter your choice");
-        Scanner scanner = new Scanner(System.in);
-        int choice = scanner.nextInt();
-        switch (choice) {
-            case 1:
-                stop();
-                break;
-            case 2:
-                pause();
-                break;
-            case 3:
-                play();
-                break;
-        }
+    public void resetAudio() throws LineUnavailableException, IOException {
+        clip.open(audioInputStream);
+        clip.loop(Clip.LOOP_CONTINUOUSLY);
     }
+
 }
