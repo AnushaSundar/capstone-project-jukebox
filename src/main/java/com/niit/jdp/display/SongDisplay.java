@@ -16,4 +16,14 @@ public class SongDisplay {
         System.out.println("1.Go to Songs");
         System.out.println("2.Exit");
     }
+
+    public void songsDisplay() {
+        System.out.println("1.Display all songs");
+        System.out.println("2.Search songs by language");
+        System.out.println("3.Search songs by genre");
+        System.out.println("4.Search songs by artist");
+        System.out.println("5.Play song");
+        System.out.println("6.Go to playlist");
+        System.out.println("7.create Playlist");
+    }
 }
