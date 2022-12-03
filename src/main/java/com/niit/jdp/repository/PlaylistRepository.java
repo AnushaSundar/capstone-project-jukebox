@@ -116,10 +116,10 @@ public class PlaylistRepository {
         try (Statement statement = connection.createStatement()) {
             ResultSet resultSet = statement.executeQuery(selectQuery);
             while (resultSet.next()) {
-                String songId = resultSet.getString("song_id");
                 int playlistId = resultSet.getInt("playlist_id");
                 String playlistName = resultSet.getString("playlist_name");
-                Playlist playlist2 = new Playlist(playlistId, playlistName, songId);
+                Playlist playlist2 = new Playlist(playlistId, playlistName);
+                playlist.add(playlist2);
             }
         } catch (SQLException e) {
             e.printStackTrace();

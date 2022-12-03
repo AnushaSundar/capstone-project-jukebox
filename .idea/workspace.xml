@@ -4,9 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3fd95403-ad27-4af6-a7d5-f8c74b5ae86e" name="Changes" comment="added displayPlaylist() in PlaylistRepository.java">
+    <list default="true" id="3fd95403-ad27-4af6-a7d5-f8c74b5ae86e" name="Changes" comment="added getPlaylist() in PlaylistRepository type">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/display/SongDisplay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/display/SongDisplay.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/model/Playlist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/model/Playlist.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/repository/PlaylistRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/repository/PlaylistRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/repository/SongRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/repository/SongRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/service/MusicPlayerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/service/MusicPlayerService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -156,13 +161,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1669808880905</updated>
-    </task>
-    <task id="LOCAL-00030" summary="added fields to MusicPlayerService.java">
-      <created>1669869151004</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1669869151004</updated>
     </task>
     <task id="LOCAL-00031" summary="create song directory and add the songs">
       <created>1669870903464</created>
@@ -500,7 +498,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669978492572</updated>
     </task>
-    <option name="localTasksCounter" value="79" />
+    <task id="LOCAL-00079" summary="added getPlaylist() in PlaylistRepository type">
+      <created>1669979821753</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1669979821753</updated>
+    </task>
+    <option name="localTasksCounter" value="80" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -515,7 +520,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added displaySortedList() in SongRepository.java" />
     <MESSAGE value="added collections.sort() to sort songs alphabetically in SongRepository.java" />
     <MESSAGE value="added getAllSongsFromPlaylist() in PlaylistRepository.java" />
     <MESSAGE value="changed the data type of instance Variable songId from int to list&lt;Song&gt; in Playlist.java" />
@@ -540,7 +544,8 @@
     <MESSAGE value="added jukeboxDisplay() in SongDisplay.java" />
     <MESSAGE value="added songsDisplay() in SongDisplay.java" />
     <MESSAGE value="added displayPlaylist() in PlaylistRepository.java" />
-    <option name="LAST_COMMIT_MESSAGE" value="added displayPlaylist() in PlaylistRepository.java" />
+    <MESSAGE value="added getPlaylist() in PlaylistRepository type" />
+    <option name="LAST_COMMIT_MESSAGE" value="added getPlaylist() in PlaylistRepository type" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

@@ -7,29 +7,48 @@
 
 package com.niit.jdp.display;
 
+import com.niit.jdp.model.Song;
+import com.niit.jdp.repository.PlaylistRepository;
+import com.niit.jdp.repository.SongRepository;
+import com.niit.jdp.service.MusicPlayerService;
+
+import java.sql.SQLException;
+import java.util.List;
+import java.util.Scanner;
+
 public class SongDisplay {
-    public void jukeboxDisplay() {
-        System.out.println("===================================");
-        System.out.println("       Welcome To Jukebox          ");
-        System.out.println("===================================");
-        System.out.println();
-        System.out.println("1.Go to Songs");
-        System.out.println("2.Exit");
+    SongRepository songRepository;
+    Scanner scanner = new Scanner(System.in);
+
+    {
+        try {
+            songRepository = new SongRepository();
+            PlaylistRepository playlistRepository = new PlaylistRepository();
+            MusicPlayerService musicPlayerService = new MusicPlayerService();
+            SongDisplay songDisplay = new SongDisplay();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
-    public void songsDisplay() {
-        System.out.println("1.Display all songs");
-        System.out.println("2.Search songs by language");
-        System.out.println("3.Search songs by genre");
-        System.out.println("4.Search songs by artist");
-        System.out.println("5.Play song");
-        System.out.println("6.Go to playlist");
-        System.out.println("7.create Playlist");
-        System.out.println("8.Exit");
-    }
-
-    public void display() {
-        System.out.println("1.Play song");
-        System.out.println("2.Go to Menu");
+    public void displayAllSongs() {
+        List<Song> allSongs = songRepository.getAllSongs();
+        songRepository.displaySongList(allSongs);
+        int option1 = 0;
+        do {
+            System.out.println("1.Play all songs");
+            System.out.println("2.Select song");
+            System.out.println("3.Go to menu");
+            System.out.println("Enter your choice");
+            option1 = scanner.nextInt();
+            if (option1 == 1) {
+                songRepository.playAllSongs(allSongs);
+            } else if (option1 == 2) {
+                System.out.println("Enter the song Id: ");
+                int songId = scanner.nextInt();
+                Song song = songRepository.getSong(songId);
+                songRepository.playSong(song);
+            }
+        } while (option1 != 3);
     }
 }

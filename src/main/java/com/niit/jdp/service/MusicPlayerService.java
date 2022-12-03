@@ -29,21 +29,30 @@ public class MusicPlayerService {
             clip.loop(Clip.LOOP_CONTINUOUSLY);
             int choice = 0;
             do {
+                System.out.println("Stop the song before exiting!!");
                 System.out.println("1.pause");
                 System.out.println("2.resume");
                 System.out.println("3.stop");
+                System.out.println("4.exit");
                 System.out.println("Enter your choice");
                 Scanner scanner = new Scanner(System.in);
                 choice = scanner.nextInt();
                 switch (choice) {
                     case 1:
                         pause();
+                        System.out.println("song is paused.");
                         break;
                     case 2:
                         resume();
+                        System.out.println("Song is resumed.");
+                        break;
+                    case 3:
+                        stop();
+                        System.out.println("Stopped the song.");
+                        System.out.println("Press 4 to exit.");
                         break;
                 }
-            } while (choice != 3);
+            } while (choice != 4);
         } catch (UnsupportedAudioFileException | IOException | LineUnavailableException e) {
             e.printStackTrace();
         }

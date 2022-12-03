@@ -15,6 +15,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Scanner;
 
 public class SongRepository {
     Connection connection;
@@ -61,9 +62,17 @@ public class SongRepository {
 
     public void playAllSongs(List<Song> songlist) {
         for (Song song : songlist) {
+            int option = 0;
             new MusicPlayerService().player(song.getSongPath());
-            System.out.println("You have stopped playing");
+            System.out.println("You stopped the song");
+            System.out.println("press 0 to move to next song");
+            System.out.println("press 1 to exit");
+            Scanner scanner = new Scanner(System.in);
+            option = scanner.nextInt();
+            if (option == 1)
+                break;
         }
+
     }
 
     public List<Song> searchSongByLanguage(String value) {

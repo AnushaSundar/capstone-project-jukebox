@@ -14,7 +14,6 @@ public class Playlist {
     private List<Song> songIds;
     private int playlistId;
     private String playlistName;
-    private String songId;
 
     public Playlist() {
     }
@@ -24,11 +23,6 @@ public class Playlist {
         this.playlistName = playlistName;
     }
 
-    public Playlist(int playlistId, String playlistName, String songId) {
-        this.playlistId = playlistId;
-        this.playlistName = playlistName;
-        this.songId = songId;
-    }
 
     public int getPlaylistId() {
         return playlistId;
@@ -54,10 +48,10 @@ public class Playlist {
         this.playlistName = playlistName;
     }
 
+
     @Override
     public String toString() {
-        return "songId:" + songIds +
-                ", playlistId:" + playlistId +
+        return "playlistId:" + playlistId +
                 ", playlistName:'" + playlistName + '\'';
     }
 
