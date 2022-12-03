@@ -78,10 +78,4 @@ public class MusicPlayerService {
         clip.stop();
         clip.close();
     }
-
-    public void resetAudio() throws LineUnavailableException, IOException {
-        clip.open(audioInputStream);
-        clip.loop(Clip.LOOP_CONTINUOUSLY);
-    }
-
 }

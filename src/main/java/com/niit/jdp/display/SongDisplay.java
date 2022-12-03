@@ -221,4 +221,27 @@ public class SongDisplay {
         Song aSongFromPlaylist = playlistRepository.getASongFromPlaylist(songId, playlistId);
         songRepository.playSong(aSongFromPlaylist);
     }
+
+    public void selectPlaylist() {
+        System.out.println("Enter the playlist_id");
+        int playlistId2 = scanner.nextInt();
+        List<Song> songsFromPlaylist = playlistRepository.getAllSongsFromPlaylist(playlistId2);
+        songRepository.displaySongList(songsFromPlaylist);
+        int option6 = 0;
+        do {
+            System.out.println("1.Play all song");
+            System.out.println("2.Select song");
+            System.out.println("3.Go to menu");
+            System.out.println("Enter your choice");
+            option6 = scanner.nextInt();
+            if (option6 == 1) {
+                songRepository.playAllSongs(songsFromPlaylist);
+            } else if (option6 == 2) {
+                System.out.println("Enter the song_id");
+                int id2 = scanner.nextInt();
+                Song song = songRepository.getSong(id2);
+                songRepository.playSong(song);
+            }
+        } while (option6 != 3);
+    }
 }
