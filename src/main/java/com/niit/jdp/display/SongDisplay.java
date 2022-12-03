@@ -257,4 +257,15 @@ public class SongDisplay {
             System.err.println("Sorry,Check the song_id!!");
         }
     }
+
+    public void deletePlaylist() {
+        System.out.println("Enter the playlist_id : ");
+        int playlistId3 = scanner.nextInt();
+        boolean deletedPlaylist = playlistRepository.deletePlaylist(playlistId3);
+        if (deletedPlaylist) {
+            System.out.println("\u001B[32m Deletted playlist : \u001B[0m" + playlistId3);
+        } else {
+            System.err.println("Sorry,Check the playlist_id!!");
+        }
+    }
 }
