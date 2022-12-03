@@ -1,13 +1,17 @@
 package com.niit.jdp;
 
 import com.niit.jdp.display.SongDisplay;
+import com.niit.jdp.model.Playlist;
+import com.niit.jdp.repository.PlaylistRepository;
 
 import java.sql.SQLException;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) throws SQLException {
         SongDisplay songDisplay = new SongDisplay();
+        PlaylistRepository playlistRepository = new PlaylistRepository();
         Scanner scanner = new Scanner(System.in);
         int choice;
         do {
@@ -48,7 +52,36 @@ public class Main {
                             songDisplay.playAllSong();
                             break;
                         case 6:
-                            songDisplay.goToPlaylist();
+                            List<Playlist> playlist = playlistRepository.getPlaylist();
+                            playlistRepository.displayPlaylist(playlist);
+                            int option5 = 0;
+                            do {
+                                System.out.println("1.Select a song from playlist");
+                                System.out.println("2.Select a playlist ");
+                                System.out.println("3.Create Playlist");
+                                System.out.println("4.Add song to playlist");
+                                System.out.println("5.Delete Playlist");
+                                System.out.println("6.Go to menu");
+                                System.out.println("Enter your choice");
+                                option5 = scanner.nextInt();
+                                switch (option5) {
+                                    case 1:
+                                        songDisplay.selectSongFromPlaylist();
+                                        break;
+                                    case 2:
+                                        songDisplay.selectPlaylist();
+                                        break;
+                                    case 3:
+                                        songDisplay.createPlaylist();
+                                        break;
+                                    case 4:
+                                        songDisplay.addSongsToPlaylist();
+                                        break;
+                                    case 5:
+                                        songDisplay.deletePlaylist();
+                                        break;
+                                }
+                            } while (option5 != 6);
                             break;
                     }
                 } while (menuChoice != 7);
