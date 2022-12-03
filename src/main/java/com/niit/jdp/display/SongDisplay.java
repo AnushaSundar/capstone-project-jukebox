@@ -244,4 +244,23 @@ public class SongDisplay {
             }
         } while (option6 != 3);
     }
+
+    public void createPlaylist() {
+        System.out.println("Enter the playlist name: ");
+        String name = scanner.next();
+        Playlist playlist1 = playlistRepository.createPlaylist(name);
+        System.out.println("successfully created your playlist.");
+        System.out.println("Your playlist id is: " + playlist1.getPlaylistId());
+        System.out.println("Want to see the playlist then press 1 or 0 to exit");
+        int option7 = scanner.nextInt();
+        List<Playlist> playlist2 = null;
+        if (option7 == 1) {
+            playlist2 = playlistRepository.getPlaylist();
+            playlistRepository.displayPlaylist(playlist2);
+            System.out.println();
+            break;
+        }
+        if (option7 == 0)
+            break;
+    }
 }

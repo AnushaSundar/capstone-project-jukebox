@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3fd95403-ad27-4af6-a7d5-f8c74b5ae86e" name="Changes" comment="added playAllSong() in SongDisplay.java">
+    <list default="true" id="3fd95403-ad27-4af6-a7d5-f8c74b5ae86e" name="Changes" comment="added selectSongFromPlaylist() in SongDisplay.java">
       <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/display/SongDisplay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/display/SongDisplay.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/service/MusicPlayerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/service/MusicPlayerService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,20 +156,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1669808880905</updated>
-    </task>
-    <task id="LOCAL-00036" summary="added stop() to MusicPlayerService.java">
-      <created>1669875098659</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1669875098659</updated>
-    </task>
-    <task id="LOCAL-00037" summary="added no-args constructor to SongRepository.java and established connection">
-      <created>1669875792548</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1669875792548</updated>
     </task>
     <task id="LOCAL-00038" summary="defined displaySongs() in SongRepository.java">
       <created>1669876396985</created>
@@ -499,7 +486,21 @@
       <option name="project" value="LOCAL" />
       <updated>1670054800133</updated>
     </task>
-    <option name="localTasksCounter" value="85" />
+    <task id="LOCAL-00085" summary="added goToPlaylist() in SongDisplay.java">
+      <created>1670054919307</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1670054919308</updated>
+    </task>
+    <task id="LOCAL-00086" summary="added selectSongFromPlaylist() in SongDisplay.java">
+      <created>1670055191373</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1670055191373</updated>
+    </task>
+    <option name="localTasksCounter" value="87" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -514,8 +515,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="modified getAllSongsFromPlaylist() in PlaylistRepository.java" />
-    <MESSAGE value="modified deletePlaylist() in PlaylistRepository.java" />
     <MESSAGE value="added getASongFromPlaylist() to PlaylistRepository.java" />
     <MESSAGE value="added searchSongByGenre() to SongRepository.java" />
     <MESSAGE value="added searchSongByArtist() to SongRepository.java" />
@@ -539,7 +538,9 @@
     <MESSAGE value="added searchSongsBYGenre() in SongDisplay.java" />
     <MESSAGE value="added searchSongsByArtist() in SongDisplay.java" />
     <MESSAGE value="added playAllSong() in SongDisplay.java" />
-    <option name="LAST_COMMIT_MESSAGE" value="added playAllSong() in SongDisplay.java" />
+    <MESSAGE value="added goToPlaylist() in SongDisplay.java" />
+    <MESSAGE value="added selectSongFromPlaylist() in SongDisplay.java" />
+    <option name="LAST_COMMIT_MESSAGE" value="added selectSongFromPlaylist() in SongDisplay.java" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
