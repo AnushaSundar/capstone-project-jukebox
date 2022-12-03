@@ -74,4 +74,27 @@ public class SongDisplay {
             }
         } while (option2 != 3);
     }
+
+    public void searchSongByGenre() {
+        System.out.println("Enter the Genre");
+        String genre = scanner.next();
+        List<Song> songs2 = songRepository.searchSongByGenre(genre);
+        songRepository.displaySongList(songs2);
+        int option3 = 0;
+        do {
+            System.out.println("1.Play all songs");
+            System.out.println("2.Select song");
+            System.out.println("3.Go to menu");
+            System.out.println("Enter your choice");
+            option3 = scanner.nextInt();
+            if (option3 == 1) {
+                songRepository.playAllSongs(songs2);
+            } else if (option3 == 2) {
+                System.out.println("Enter the song Id: ");
+                int songId = scanner.nextInt();
+                Song song = songRepository.getSong(songId);
+                songRepository.playSong(song);
+            }
+        } while (option3 != 3);
+    }
 }
