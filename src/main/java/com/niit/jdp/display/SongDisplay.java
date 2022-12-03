@@ -139,34 +139,10 @@ public class SongDisplay {
             option5 = scanner.nextInt();
             switch (option5) {
                 case 1:
-                    System.out.println("Enter the playlist_id :");
-                    int playlistId = scanner.nextInt();
-                    System.out.println("Enter the song_id");
-                    int songId = scanner.nextInt();
-                    Song aSongFromPlaylist = playlistRepository.getASongFromPlaylist(songId, playlistId);
-                    songRepository.playSong(aSongFromPlaylist);
+                    selectSongFromPlaylist();
                     break;
                 case 2:
-                    System.out.println("Enter the playlist_id");
-                    int playlistId2 = scanner.nextInt();
-                    List<Song> songsFromPlaylist = playlistRepository.getAllSongsFromPlaylist(playlistId2);
-                    songRepository.displaySongList(songsFromPlaylist);
-                    int option6 = 0;
-                    do {
-                        System.out.println("1.Play all song");
-                        System.out.println("2.Select song");
-                        System.out.println("3.Go to menu");
-                        System.out.println("Enter your choice");
-                        option6 = scanner.nextInt();
-                        if (option6 == 1) {
-                            songRepository.playAllSongs(songsFromPlaylist);
-                        } else if (option6 == 2) {
-                            System.out.println("Enter the song_id");
-                            int id2 = scanner.nextInt();
-                            Song song = songRepository.getSong(id2);
-                            songRepository.playSong(song);
-                        }
-                    } while (option6 != 3);
+                    selectPlaylist();
                     break;
                 case 3:
                     System.out.println("Enter the playlist name: ");
@@ -187,26 +163,10 @@ public class SongDisplay {
                         break;
                     break;
                 case 4:
-                    System.out.println("Enter the playlist_id : ");
-                    int playlistId1 = scanner.nextInt();
-                    System.out.println("Enter the song_Id : ");
-                    String songId1 = scanner.next();
-                    boolean addedSongs = playlistRepository.addSongsToPlaylist(songId1, playlistId1);
-                    if (addedSongs) {
-                        System.out.println("\u001B[32m Songs added to playlist\u001B[0m");
-                    } else {
-                        System.err.println("Sorry,Check the song_id!!");
-                    }
+                    addSongsToPlaylist();
                     break;
                 case 5:
-                    System.out.println("Enter the playlist_id : ");
-                    int playlistId3 = scanner.nextInt();
-                    boolean deletedPlaylist = playlistRepository.deletePlaylist(playlistId3);
-                    if (deletedPlaylist) {
-                        System.out.println("\u001B[32m Deletted playlist : \u001B[0m" + playlistId3);
-                    } else {
-                        System.err.println("Sorry,Check the playlist_id!!");
-                    }
+                    deletePlaylist();
                     break;
             }
             break;
