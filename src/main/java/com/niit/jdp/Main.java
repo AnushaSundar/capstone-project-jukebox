@@ -216,8 +216,8 @@ public class Main {
                                         }
                                         break;
                                 }
-                                break;
                             } while (option5 != 6);
+                            break;
                     }
                 } while (menuChoice != 7);
             }

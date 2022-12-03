@@ -4,14 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3fd95403-ad27-4af6-a7d5-f8c74b5ae86e" name="Changes" comment="added getPlaylist() in PlaylistRepository type">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/Main.java" afterDir="false" />
+    <list default="true" id="3fd95403-ad27-4af6-a7d5-f8c74b5ae86e" name="Changes" comment="added playAllSong() in SongDisplay.java">
       <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/display/SongDisplay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/display/SongDisplay.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/model/Playlist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/model/Playlist.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/repository/PlaylistRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/repository/PlaylistRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/repository/SongRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/repository/SongRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/service/MusicPlayerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/service/MusicPlayerService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -161,41 +155,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1669808880905</updated>
-    </task>
-    <task id="LOCAL-00031" summary="create song directory and add the songs">
-      <created>1669870903464</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1669870903464</updated>
-    </task>
-    <task id="LOCAL-00032" summary="added field songPath to Song.java">
-      <created>1669874149038</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1669874149038</updated>
-    </task>
-    <task id="LOCAL-00033" summary="added songPath parameter to parameterized constructor in Song.java">
-      <created>1669874242041</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1669874242041</updated>
-    </task>
-    <task id="LOCAL-00034" summary="added getter and setter for songPath instance variable in Song.java">
-      <created>1669874394801</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1669874394801</updated>
-    </task>
-    <task id="LOCAL-00035" summary="created Songs-Database.sql">
-      <created>1669874677512</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1669874677512</updated>
     </task>
     <task id="LOCAL-00036" summary="added stop() to MusicPlayerService.java">
       <created>1669875098659</created>
@@ -505,7 +464,42 @@
       <option name="project" value="LOCAL" />
       <updated>1669979821753</updated>
     </task>
-    <option name="localTasksCounter" value="80" />
+    <task id="LOCAL-00080" summary="added displayAllSongs() in SongDisplay.java">
+      <created>1670054536929</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1670054536930</updated>
+    </task>
+    <task id="LOCAL-00081" summary="added searchSongsBYLanguage() in SongDisplay.java">
+      <created>1670054625699</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1670054625699</updated>
+    </task>
+    <task id="LOCAL-00082" summary="added searchSongsBYGenre() in SongDisplay.java">
+      <created>1670054686763</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1670054686763</updated>
+    </task>
+    <task id="LOCAL-00083" summary="added searchSongsByArtist() in SongDisplay.java">
+      <created>1670054740666</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1670054740666</updated>
+    </task>
+    <task id="LOCAL-00084" summary="added playAllSong() in SongDisplay.java">
+      <created>1670054800133</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1670054800133</updated>
+    </task>
+    <option name="localTasksCounter" value="85" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -520,11 +514,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added collections.sort() to sort songs alphabetically in SongRepository.java" />
-    <MESSAGE value="added getAllSongsFromPlaylist() in PlaylistRepository.java" />
-    <MESSAGE value="changed the data type of instance Variable songId from int to list&lt;Song&gt; in Playlist.java" />
-    <MESSAGE value="added addSongsToPlaylist() in PlaylistRepository.java" />
-    <MESSAGE value="added getSong() in SongRepository.java" />
     <MESSAGE value="modified getAllSongsFromPlaylist() in PlaylistRepository.java" />
     <MESSAGE value="modified deletePlaylist() in PlaylistRepository.java" />
     <MESSAGE value="added getASongFromPlaylist() to PlaylistRepository.java" />
@@ -545,7 +534,12 @@
     <MESSAGE value="added songsDisplay() in SongDisplay.java" />
     <MESSAGE value="added displayPlaylist() in PlaylistRepository.java" />
     <MESSAGE value="added getPlaylist() in PlaylistRepository type" />
-    <option name="LAST_COMMIT_MESSAGE" value="added getPlaylist() in PlaylistRepository type" />
+    <MESSAGE value="added displayAllSongs() in SongDisplay.java" />
+    <MESSAGE value="added searchSongsBYLanguage() in SongDisplay.java" />
+    <MESSAGE value="added searchSongsBYGenre() in SongDisplay.java" />
+    <MESSAGE value="added searchSongsByArtist() in SongDisplay.java" />
+    <MESSAGE value="added playAllSong() in SongDisplay.java" />
+    <option name="LAST_COMMIT_MESSAGE" value="added playAllSong() in SongDisplay.java" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

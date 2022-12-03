@@ -19,17 +19,14 @@ import java.util.Scanner;
 
 public class SongDisplay {
     SongRepository songRepository;
+    PlaylistRepository playlistRepository;
+    MusicPlayerService musicPlayerService;
     Scanner scanner = new Scanner(System.in);
 
-    {
-        try {
-            songRepository = new SongRepository();
-            PlaylistRepository playlistRepository = new PlaylistRepository();
-            MusicPlayerService musicPlayerService = new MusicPlayerService();
-            SongDisplay songDisplay = new SongDisplay();
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+    public SongDisplay() throws SQLException {
+        songRepository = new SongRepository();
+        playlistRepository = new PlaylistRepository();
+        musicPlayerService = new MusicPlayerService();
     }
 
     public void displayAllSongs() {
@@ -214,5 +211,14 @@ public class SongDisplay {
             }
             break;
         } while (option5 != 6);
+    }
+
+    public void selectSongFromPlaylist() {
+        System.out.println("Enter the playlist_id :");
+        int playlistId = scanner.nextInt();
+        System.out.println("Enter the song_id");
+        int songId = scanner.nextInt();
+        Song aSongFromPlaylist = playlistRepository.getASongFromPlaylist(songId, playlistId);
+        songRepository.playSong(aSongFromPlaylist);
     }
 }
