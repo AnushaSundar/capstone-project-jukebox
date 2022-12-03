@@ -183,9 +183,8 @@ public class Main {
                                         System.out.println("Your playlist id is: " + playlist1.getPlaylistId());
                                         System.out.println("Want to see the playlist then press 1 or 0 to exit");
                                         int option7 = scanner.nextInt();
-                                        List<Playlist> playlist2 = null;
                                         if (option7 == 1) {
-                                            playlist2 = playlistRepository.getPlaylist();
+                                            List<Playlist> playlist2 = playlistRepository.getPlaylist();
                                             playlistRepository.displayPlaylist(playlist2);
                                             System.out.println();
                                             break;

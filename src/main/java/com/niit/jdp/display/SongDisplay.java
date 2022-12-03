@@ -245,22 +245,16 @@ public class SongDisplay {
         } while (option6 != 3);
     }
 
-    public void createPlaylist() {
-        System.out.println("Enter the playlist name: ");
-        String name = scanner.next();
-        Playlist playlist1 = playlistRepository.createPlaylist(name);
-        System.out.println("successfully created your playlist.");
-        System.out.println("Your playlist id is: " + playlist1.getPlaylistId());
-        System.out.println("Want to see the playlist then press 1 or 0 to exit");
-        int option7 = scanner.nextInt();
-        List<Playlist> playlist2 = null;
-        if (option7 == 1) {
-            playlist2 = playlistRepository.getPlaylist();
-            playlistRepository.displayPlaylist(playlist2);
-            System.out.println();
-            break;
+    public void addSongsToPlaylist() {
+        System.out.println("Enter the playlist_id : ");
+        int playlistId1 = scanner.nextInt();
+        System.out.println("Enter the song_Id : ");
+        String songId1 = scanner.next();
+        boolean addedSongs = playlistRepository.addSongsToPlaylist(songId1, playlistId1);
+        if (addedSongs) {
+            System.out.println("\u001B[32m Songs added to playlist\u001B[0m");
+        } else {
+            System.err.println("Sorry,Check the song_id!!");
         }
-        if (option7 == 0)
-            break;
     }
 }
