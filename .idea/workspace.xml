@@ -4,10 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3fd95403-ad27-4af6-a7d5-f8c74b5ae86e" name="Changes" comment="modified main() in main class">
+    <list default="true" id="3fd95403-ad27-4af6-a7d5-f8c74b5ae86e" name="Changes" comment="modified main() in main class again">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/display/SongDisplay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/display/SongDisplay.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/repository/PlaylistRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/repository/PlaylistRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/repository/SongRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/repository/SongRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/service/DatabaseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/service/DatabaseService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -157,13 +160,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1669808880905</updated>
-    </task>
-    <task id="LOCAL-00043" summary="added field album and modified constructor,toString(), equals() and hashCode() in Song.java">
-      <created>1669877661761</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1669877661761</updated>
     </task>
     <task id="LOCAL-00044" summary="created playOneSong() in SongRepository.java">
       <created>1669878074833</created>
@@ -501,7 +497,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670056281956</updated>
     </task>
-    <option name="localTasksCounter" value="92" />
+    <task id="LOCAL-00092" summary="modified main() in main class again">
+      <created>1670057284657</created>
+      <option name="number" value="00092" />
+      <option name="presentableId" value="LOCAL-00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1670057284658</updated>
+    </task>
+    <option name="localTasksCounter" value="93" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -516,7 +519,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added junit dependency" />
     <MESSAGE value="added fields in MusicPlayerService.java" />
     <MESSAGE value="added play() in MusicPlayerService.java" />
     <MESSAGE value="added stop() in MusicPlayerService.java" />
@@ -541,7 +543,8 @@
     <MESSAGE value="added addSongsToPlaylist() in SongDisplay.java" />
     <MESSAGE value="added deletePlaylist() in SongDisplay.java" />
     <MESSAGE value="modified main() in main class" />
-    <option name="LAST_COMMIT_MESSAGE" value="modified main() in main class" />
+    <MESSAGE value="modified main() in main class again" />
+    <option name="LAST_COMMIT_MESSAGE" value="modified main() in main class again" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

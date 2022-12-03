@@ -1,6 +1,7 @@
 package com.niit.jdp;
 
 import com.niit.jdp.display.SongDisplay;
+import com.niit.jdp.exception.CustomException;
 import com.niit.jdp.model.Playlist;
 import com.niit.jdp.repository.PlaylistRepository;
 
@@ -54,7 +55,8 @@ public class Main {
                         case 6:
                             List<Playlist> playlist = playlistRepository.getPlaylist();
                             playlistRepository.displayPlaylist(playlist);
-                            int option5 = 0;
+                            System.out.println();
+                            int option5;
                             do {
                                 System.out.println("1.Select a song from playlist");
                                 System.out.println("2.Select a playlist ");
@@ -75,10 +77,20 @@ public class Main {
                                         songDisplay.createPlaylist();
                                         break;
                                     case 4:
-                                        songDisplay.addSongsToPlaylist();
+                                        try {
+                                            songDisplay.addSongsToPlaylist();
+                                        } catch (CustomException e) {
+                                            System.err.println(e.getMessage());
+                                            System.out.println();
+                                        }
                                         break;
                                     case 5:
-                                        songDisplay.deletePlaylist();
+                                        try {
+                                            songDisplay.deletePlaylist();
+                                        } catch (CustomException e) {
+                                            System.err.println(e.getMessage());
+                                            System.out.println();
+                                        }
                                         break;
                                 }
                             } while (option5 != 6);

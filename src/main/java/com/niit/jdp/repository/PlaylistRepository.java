@@ -14,12 +14,9 @@ import com.niit.jdp.service.DatabaseService;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 public class PlaylistRepository {
     Connection connection;
-    Scanner scanner = new Scanner(System.in);
-
     public PlaylistRepository() throws SQLException {
         connection = new DatabaseService().getConnectionToDatabase();
     }

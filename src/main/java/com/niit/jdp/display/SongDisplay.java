@@ -7,6 +7,7 @@
 
 package com.niit.jdp.display;
 
+import com.niit.jdp.exception.CustomException;
 import com.niit.jdp.model.Playlist;
 import com.niit.jdp.model.Song;
 import com.niit.jdp.repository.PlaylistRepository;
@@ -32,7 +33,8 @@ public class SongDisplay {
     public void displayAllSongs() {
         List<Song> allSongs = songRepository.getAllSongs();
         songRepository.displaySongList(allSongs);
-        int option1 = 0;
+        System.out.println();
+        int option1;
         do {
             System.out.println("1.Play all songs");
             System.out.println("2.Select song");
@@ -55,7 +57,7 @@ public class SongDisplay {
         String language = scanner.next();
         List<Song> songs = songRepository.searchSongByLanguage(language);
         songRepository.displaySongList(songs);
-        int option2 = 0;
+        int option2;
         do {
             System.out.println("1.Play all songs");
             System.out.println("2.Select song");
@@ -78,7 +80,7 @@ public class SongDisplay {
         String genre = scanner.next();
         List<Song> songs2 = songRepository.searchSongByGenre(genre);
         songRepository.displaySongList(songs2);
-        int option3 = 0;
+        int option3;
         do {
             System.out.println("1.Play all songs");
             System.out.println("2.Select song");
@@ -101,7 +103,7 @@ public class SongDisplay {
         String artist = scanner.next();
         List<Song> songs3 = songRepository.searchSongByArtist(artist);
         songRepository.displaySongList(songs3);
-        int option4 = 0;
+        int option4;
         do {
             System.out.println("1.play all songs");
             System.out.println("2.Select song");
@@ -123,41 +125,6 @@ public class SongDisplay {
         List<Song> allSongs2 = songRepository.getAllSongs();
         songRepository.playAllSongs(allSongs2);
     }
-
-    public void goToPlaylist() {
-        List<Playlist> playlist = playlistRepository.getPlaylist();
-        playlistRepository.displayPlaylist(playlist);
-        int option5 = 0;
-        do {
-            System.out.println("1.Select a song from playlist");
-            System.out.println("2.Select a playlist ");
-            System.out.println("3.Create Playlist");
-            System.out.println("4.Add song to playlist");
-            System.out.println("5.Delete Playlist");
-            System.out.println("6.Go to menu");
-            System.out.println("Enter your choice");
-            option5 = scanner.nextInt();
-            switch (option5) {
-                case 1:
-                    selectSongFromPlaylist();
-                    break;
-                case 2:
-                    selectPlaylist();
-                    break;
-                case 3:
-                    createPlaylist();
-                    break;
-                case 4:
-                    addSongsToPlaylist();
-                    break;
-                case 5:
-                    deletePlaylist();
-                    break;
-            }
-            break;
-        } while (option5 != 6);
-    }
-
     public void selectSongFromPlaylist() {
         System.out.println("Enter the playlist_id :");
         int playlistId = scanner.nextInt();
@@ -172,7 +139,7 @@ public class SongDisplay {
         int playlistId2 = scanner.nextInt();
         List<Song> songsFromPlaylist = playlistRepository.getAllSongsFromPlaylist(playlistId2);
         songRepository.displaySongList(songsFromPlaylist);
-        int option6 = 0;
+        int option6;
         do {
             System.out.println("1.Play all song");
             System.out.println("2.Select song");
@@ -196,9 +163,10 @@ public class SongDisplay {
         Playlist playlist1 = playlistRepository.createPlaylist(name);
         System.out.println("successfully created your playlist.");
         System.out.println("Your playlist id is: " + playlist1.getPlaylistId());
+        System.out.println();
     }
 
-    public void addSongsToPlaylist() {
+    public void addSongsToPlaylist() throws CustomException {
         System.out.println("Enter the playlist_id : ");
         int playlistId1 = scanner.nextInt();
         System.out.println("Enter the song_Id : ");
@@ -206,19 +174,21 @@ public class SongDisplay {
         boolean addedSongs = playlistRepository.addSongsToPlaylist(songId1, playlistId1);
         if (addedSongs) {
             System.out.println("\u001B[32m Songs added to playlist\u001B[0m");
+            System.out.println();
         } else {
-            System.err.println("Sorry,Check the song_id!!");
+            throw new CustomException("Sorry,Check the song_id or playlist_id!!");
         }
     }
 
-    public void deletePlaylist() {
+    public void deletePlaylist() throws CustomException {
         System.out.println("Enter the playlist_id : ");
         int playlistId3 = scanner.nextInt();
         boolean deletedPlaylist = playlistRepository.deletePlaylist(playlistId3);
         if (deletedPlaylist) {
             System.out.println("\u001B[32m Deletted playlist : \u001B[0m" + playlistId3);
+            System.out.println();
         } else {
-            System.err.println("Sorry,Check the playlist_id!!");
+            throw new CustomException("Sorry,playlist_id doesn't exists!!");
         }
     }
 }

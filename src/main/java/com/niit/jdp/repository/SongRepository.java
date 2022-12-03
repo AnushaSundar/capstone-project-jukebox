@@ -13,7 +13,6 @@ import com.niit.jdp.service.MusicPlayerService;
 
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
@@ -50,8 +49,7 @@ public class SongRepository {
 
     public void displaySongList(List<Song> songList) {
         System.out.println("Songs For You TO Enjoy");
-        Collections.sort(songList,
-                (Song o1, Song o2) -> String.CASE_INSENSITIVE_ORDER.compare(o1.getSongName(), o2.getSongName()));
+        songList.sort((Song o1, Song o2) -> String.CASE_INSENSITIVE_ORDER.compare(o1.getSongName(), o2.getSongName()));
         songList.forEach(System.out::println);
     }
 
@@ -62,7 +60,7 @@ public class SongRepository {
 
     public void playAllSongs(List<Song> songlist) {
         for (Song song : songlist) {
-            int option = 0;
+            int option;
             new MusicPlayerService().player(song.getSongPath());
             System.out.println("You stopped the song");
             System.out.println("press 0 to move to next song");
