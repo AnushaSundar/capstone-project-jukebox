@@ -120,4 +120,9 @@ public class SongDisplay {
             }
         } while (option4 != 3);
     }
+
+    public void playAllSong() {
+        List<Song> allSongs2 = songRepository.getAllSongs();
+        songRepository.playAllSongs(allSongs2);
+    }
 }
