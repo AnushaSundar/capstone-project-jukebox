@@ -57,6 +57,7 @@ public class SongDisplay {
         String language = scanner.next();
         List<Song> songs = songRepository.searchSongByLanguage(language);
         songRepository.displaySongList(songs);
+        System.out.println();
         int option2;
         do {
             System.out.println("1.Play all songs");
@@ -80,6 +81,7 @@ public class SongDisplay {
         String genre = scanner.next();
         List<Song> songs2 = songRepository.searchSongByGenre(genre);
         songRepository.displaySongList(songs2);
+        System.out.println();
         int option3;
         do {
             System.out.println("1.Play all songs");
@@ -103,6 +105,7 @@ public class SongDisplay {
         String artist = scanner.next();
         List<Song> songs3 = songRepository.searchSongByArtist(artist);
         songRepository.displaySongList(songs3);
+        System.out.println();
         int option4;
         do {
             System.out.println("1.play all songs");

@@ -106,14 +106,8 @@ public class Song {
 
     @Override
     public String toString() {
-        return "songId:" + songId +
-                ", songName:'" + songName + '\'' +
-                ", genre:'" + genre + '\'' +
-                ", artist:'" + artist + '\'' +
-                ", language:'" + language + '\'' +
-                ", songDuration:" + songDuration +
-                ", album:'" + album + '\'' +
-                '\'';
+        return String.format("%-3d\t%-35s\t%-8s\t%-15s\t%-8s\t%.2f\t%-15s", this.songId, this.songName, this.genre
+                , this.artist, this.language, this.songDuration, this.album);
     }
 
     @Override

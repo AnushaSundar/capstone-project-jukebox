@@ -51,8 +51,7 @@ public class Playlist {
 
     @Override
     public String toString() {
-        return "playlistId:" + playlistId +
-                ", playlistName:'" + playlistName + '\'';
+        return String.format("%-4d\t%-20s", this.playlistId, this.playlistName);
     }
 
     @Override

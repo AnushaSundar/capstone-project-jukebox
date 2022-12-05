@@ -48,7 +48,8 @@ public class SongRepository {
     }
 
     public void displaySongList(List<Song> songList) {
-        System.out.println("Songs For You TO Enjoy");
+        System.out.println("    Songs For You TO Enjoy :)!!  ");
+        System.out.println();
         songList.sort((Song o1, Song o2) -> String.CASE_INSENSITIVE_ORDER.compare(o1.getSongName(), o2.getSongName()));
         songList.forEach(System.out::println);
     }
@@ -64,7 +65,7 @@ public class SongRepository {
             new MusicPlayerService().player(song.getSongPath());
             System.out.println("You stopped the song");
             System.out.println("press 0 to move to next song");
-            System.out.println("press 1 to exit");
+            System.out.println("press 1 to exit loop");
             Scanner scanner = new Scanner(System.in);
             option = scanner.nextInt();
             if (option == 1)

@@ -53,6 +53,8 @@ public class Main {
                             songDisplay.playAllSong();
                             break;
                         case 6:
+                            System.out.println();
+                            System.out.println("   PLAYLIST   ");
                             List<Playlist> playlist = playlistRepository.getPlaylist();
                             playlistRepository.displayPlaylist(playlist);
                             System.out.println();

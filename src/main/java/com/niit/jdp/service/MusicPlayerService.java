@@ -17,7 +17,6 @@ public class MusicPlayerService {
     AudioInputStream audioInputStream;
     Clip clip;
     long currentFrame;
-    String status;
 
     public void player(String fileName) {
         file = new File(fileName);
@@ -27,9 +26,10 @@ public class MusicPlayerService {
             clip.open(audioInputStream);
             play();
             clip.loop(Clip.LOOP_CONTINUOUSLY);
-            int choice = 0;
+            int choice;
             do {
-                System.out.println("Stop the song before exiting!!");
+                System.out.println();
+                System.out.println("Stop the song before exit!!");
                 System.out.println("1.pause");
                 System.out.println("2.resume");
                 System.out.println("3.stop");
@@ -60,13 +60,11 @@ public class MusicPlayerService {
 
     public void play() {
         clip.start();
-        status = "play";
     }
 
     public void pause() {
         this.currentFrame = clip.getMicrosecondLength();
         clip.stop();
-        status = "paused";
     }
 
     public void resume() throws LineUnavailableException, IOException {
