@@ -24,7 +24,7 @@ public class MusicPlayerService {
             audioInputStream = AudioSystem.getAudioInputStream(file);
             clip = AudioSystem.getClip();
             clip.open(audioInputStream);
-            play();
+            clip.start();
             clip.loop(Clip.LOOP_CONTINUOUSLY);
             int choice;
             System.out.println();
@@ -39,15 +39,18 @@ public class MusicPlayerService {
                 choice = scanner.nextInt();
                 switch (choice) {
                     case 1:
-                        pause();
+                        this.currentFrame = clip.getMicrosecondLength();
+                        clip.stop();
                         System.out.println("song is paused.");
                         break;
                     case 2:
-                        resume();
+                        clip.start();
                         System.out.println("Song is resumed.");
                         break;
                     case 3:
-                        stop();
+                        this.currentFrame = 0L;
+                        clip.stop();
+                        clip.close();
                         System.out.println("Stopped the song.");
                         System.out.println("Press 4 to exit.");
                         break;
@@ -56,24 +59,5 @@ public class MusicPlayerService {
         } catch (UnsupportedAudioFileException | IOException | LineUnavailableException e) {
             e.printStackTrace();
         }
-    }
-
-    public void play() {
-        clip.start();
-    }
-
-    public void pause() {
-        this.currentFrame = clip.getMicrosecondLength();
-        clip.stop();
-    }
-
-    public void resume() {
-        this.play();
-    }
-
-    public void stop() {
-        this.currentFrame = 0L;
-        clip.stop();
-        clip.close();
     }
 }

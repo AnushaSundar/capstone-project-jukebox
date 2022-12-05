@@ -33,8 +33,8 @@ public class SongDisplay {
     }
 
     public void displayAllSongs() {
-//        List<Song> allSongs = songRepository.getAllSongs();
-        songRepository.displaySongList(allSongs);
+        List<Song> sortedSongList = songRepository.sortList(allSongs);
+        songRepository.displaySongList(sortedSongList);
         System.out.println();
         int option1;
         do {
@@ -57,7 +57,6 @@ public class SongDisplay {
     public void searchSongByLanguage() throws CustomException {
         System.out.println("Enter the language");
         String language = scanner.next();
-//        List<Song> allSongs = songRepository.getAllSongs();
         if (allSongs.contains(language)) {
             List<Song> songs = songRepository.searchSongByLanguage(language);
             songRepository.displaySongList(songs);
@@ -86,7 +85,6 @@ public class SongDisplay {
     public void searchSongByGenre() throws CustomException {
         System.out.println("Enter the Genre");
         String genre = scanner.next();
-//        List<Song> allSongs = songRepository.getAllSongs();
         if (allSongs.contains(genre)) {
             List<Song> songs2 = songRepository.searchSongByGenre(genre);
             songRepository.displaySongList(songs2);
@@ -115,7 +113,6 @@ public class SongDisplay {
     public void searchSongByArtist() throws CustomException {
         System.out.println("Enter the Artist name");
         String artist = scanner.next();
-//        List<Song> allSongs = songRepository.getAllSongs();
         if (allSongs.contains(artist)) {
             List<Song> songs3 = songRepository.searchSongByArtist(artist);
             songRepository.displaySongList(songs3);
@@ -142,7 +139,6 @@ public class SongDisplay {
     }
 
     public void playAllSong() {
-//        List<Song> allSongs2 = songRepository.getAllSongs();
         songRepository.playAllSongs(allSongs);
     }
 
@@ -170,7 +166,8 @@ public class SongDisplay {
             songsFromPlaylist = playlistRepository.getAllSongsFromPlaylist(playlistId2);
             songRepository.displaySongList(songsFromPlaylist);
         } catch (CustomException e) {
-            System.out.println(e.getMessage());
+            System.err.println(e.getMessage());
+            System.out.println();
         }
         int option6;
         do {
@@ -200,7 +197,6 @@ public class SongDisplay {
     }
 
     public void addSongsToPlaylist() throws CustomException {
-//        List<Song> allSongs = songRepository.getAllSongs();
         songRepository.displaySongList(allSongs);
         System.out.println();
         System.out.println("Your playlist !!");

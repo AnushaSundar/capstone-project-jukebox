@@ -52,7 +52,7 @@ public class Main {
                             try {
                                 songDisplay.searchSongByGenre();
                             } catch (CustomException e) {
-                                System.out.println(e.getMessage());
+                                System.err.println(e.getMessage());
                                 System.out.println();
                             }
                             break;
@@ -60,7 +60,7 @@ public class Main {
                             try {
                                 songDisplay.searchSongByArtist();
                             } catch (CustomException e) {
-                                System.out.println(e.getMessage());
+                                System.err.println(e.getMessage());
                                 System.out.println();
                             }
                             break;
