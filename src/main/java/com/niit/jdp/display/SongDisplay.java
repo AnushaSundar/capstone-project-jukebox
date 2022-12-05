@@ -52,76 +52,91 @@ public class SongDisplay {
         } while (option1 != 3);
     }
 
-    public void searchSongByLanguage() {
+    public void searchSongByLanguage() throws CustomException {
         System.out.println("Enter the language");
         String language = scanner.next();
-        List<Song> songs = songRepository.searchSongByLanguage(language);
-        songRepository.displaySongList(songs);
-        System.out.println();
-        int option2;
-        do {
-            System.out.println("1.Play all songs");
-            System.out.println("2.Select song");
-            System.out.println("3.Go to menu");
-            System.out.println("Enter your choice");
-            option2 = scanner.nextInt();
-            if (option2 == 1) {
-                songRepository.playAllSongs(songs);
-            } else if (option2 == 2) {
-                System.out.println("Enter the song Id: ");
-                int songId = scanner.nextInt();
-                Song song = songRepository.getSong(songId);
-                songRepository.playSong(song);
-            }
-        } while (option2 != 3);
+        List<Song> allSongs = songRepository.getAllSongs();
+        if (allSongs.contains(language)) {
+            List<Song> songs = songRepository.searchSongByLanguage(language);
+            songRepository.displaySongList(songs);
+            System.out.println();
+            int option2;
+            do {
+                System.out.println("1.Play all songs");
+                System.out.println("2.Select song");
+                System.out.println("3.Go to menu");
+                System.out.println("Enter your choice");
+                option2 = scanner.nextInt();
+                if (option2 == 1) {
+                    songRepository.playAllSongs(songs);
+                } else if (option2 == 2) {
+                    System.out.println("Enter the song Id: ");
+                    int songId = scanner.nextInt();
+                    Song song = songRepository.getSong(songId);
+                    songRepository.playSong(song);
+                }
+            } while (option2 != 3);
+        } else {
+            throw new CustomException("language not found!!");
+        }
     }
 
-    public void searchSongByGenre() {
+    public void searchSongByGenre() throws CustomException {
         System.out.println("Enter the Genre");
         String genre = scanner.next();
-        List<Song> songs2 = songRepository.searchSongByGenre(genre);
-        songRepository.displaySongList(songs2);
-        System.out.println();
-        int option3;
-        do {
-            System.out.println("1.Play all songs");
-            System.out.println("2.Select song");
-            System.out.println("3.Go to menu");
-            System.out.println("Enter your choice");
-            option3 = scanner.nextInt();
-            if (option3 == 1) {
-                songRepository.playAllSongs(songs2);
-            } else if (option3 == 2) {
-                System.out.println("Enter the song Id: ");
-                int songId = scanner.nextInt();
-                Song song = songRepository.getSong(songId);
-                songRepository.playSong(song);
-            }
-        } while (option3 != 3);
+        List<Song> allSongs = songRepository.getAllSongs();
+        if (allSongs.contains(genre)) {
+            List<Song> songs2 = songRepository.searchSongByGenre(genre);
+            songRepository.displaySongList(songs2);
+            System.out.println();
+            int option3;
+            do {
+                System.out.println("1.Play all songs");
+                System.out.println("2.Select song");
+                System.out.println("3.Go to menu");
+                System.out.println("Enter your choice");
+                option3 = scanner.nextInt();
+                if (option3 == 1) {
+                    songRepository.playAllSongs(songs2);
+                } else if (option3 == 2) {
+                    System.out.println("Enter the song Id: ");
+                    int songId = scanner.nextInt();
+                    Song song = songRepository.getSong(songId);
+                    songRepository.playSong(song);
+                }
+            } while (option3 != 3);
+        } else {
+            throw new CustomException("Genre not found!!");
+        }
     }
 
-    public void searchSongByArtist() {
+    public void searchSongByArtist() throws CustomException {
         System.out.println("Enter the Artist name");
         String artist = scanner.next();
-        List<Song> songs3 = songRepository.searchSongByArtist(artist);
-        songRepository.displaySongList(songs3);
-        System.out.println();
-        int option4;
-        do {
-            System.out.println("1.play all songs");
-            System.out.println("2.Select song");
-            System.out.println("3.Go to menu");
-            System.out.println("Enter your choice");
-            option4 = scanner.nextInt();
-            if (option4 == 2) {
-                System.out.println("Enter the song_id");
-                int id2 = scanner.nextInt();
-                Song song = songRepository.getSong(id2);
-                songRepository.playSong(song);
-            } else if (option4 == 1) {
-                songRepository.playAllSongs(songs3);
-            }
-        } while (option4 != 3);
+        List<Song> allSongs = songRepository.getAllSongs();
+        if (allSongs.contains(artist)) {
+            List<Song> songs3 = songRepository.searchSongByArtist(artist);
+            songRepository.displaySongList(songs3);
+            System.out.println();
+            int option4;
+            do {
+                System.out.println("1.play all songs");
+                System.out.println("2.Select song");
+                System.out.println("3.Go to menu");
+                System.out.println("Enter your choice");
+                option4 = scanner.nextInt();
+                if (option4 == 2) {
+                    System.out.println("Enter the song_id");
+                    int id2 = scanner.nextInt();
+                    Song song = songRepository.getSong(id2);
+                    songRepository.playSong(song);
+                } else if (option4 == 1) {
+                    songRepository.playAllSongs(songs3);
+                }
+            } while (option4 != 3);
+        } else {
+            throw new CustomException("Artist not found!!");
+        }
     }
 
     public void playAllSong() {
@@ -133,7 +148,6 @@ public class SongDisplay {
         System.out.println("Enter the playlist_id :");
         int playlistId = scanner.nextInt();
         List<Song> songsFromSelectedPlaylist = playlistRepository.getAllSongsFromPlaylist(playlistId);
-        boolean empty = songsFromSelectedPlaylist.isEmpty();
         songRepository.displaySongList(songsFromSelectedPlaylist);
         System.out.println();
         System.out.println("Enter the song_id");
@@ -152,10 +166,10 @@ public class SongDisplay {
         List<Song> songsFromPlaylist = null;
         try {
             songsFromPlaylist = playlistRepository.getAllSongsFromPlaylist(playlistId2);
+            songRepository.displaySongList(songsFromPlaylist);
         } catch (CustomException e) {
             System.out.println(e.getMessage());
         }
-        songRepository.displaySongList(songsFromPlaylist);
         int option6;
         do {
             System.out.println("1.Play all song");

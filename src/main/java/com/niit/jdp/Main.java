@@ -14,8 +14,8 @@ public class Main {
         SongDisplay songDisplay = new SongDisplay();
         PlaylistRepository playlistRepository = new PlaylistRepository();
         Scanner scanner = new Scanner(System.in);
-        int choice;
-        do {
+        int choice = 0;
+        while (choice != 3) {
             System.out.println("===================================");
             System.out.println("       Welcome To Jukebox          ");
             System.out.println("===================================");
@@ -26,8 +26,8 @@ public class Main {
             System.out.println("Enter your choice");
             choice = scanner.nextInt();
             if (choice == 1) {
-                int menuChoice;
-                do {
+                int menuChoice = 0;
+                while (menuChoice != 6) {
                     System.out.println("1.Display all songs");
                     System.out.println("2.Search songs by language");
                     System.out.println("3.Search songs by genre");
@@ -41,27 +41,42 @@ public class Main {
                             songDisplay.displayAllSongs();
                             break;
                         case 2:
-                            songDisplay.searchSongByLanguage();
+                            try {
+                                songDisplay.searchSongByLanguage();
+                            } catch (CustomException e) {
+                                System.err.println(e.getMessage());
+                                System.out.println();
+                            }
                             break;
                         case 3:
-                            songDisplay.searchSongByGenre();
+                            try {
+                                songDisplay.searchSongByGenre();
+                            } catch (CustomException e) {
+                                System.out.println(e.getMessage());
+                                System.out.println();
+                            }
                             break;
                         case 4:
-                            songDisplay.searchSongByArtist();
+                            try {
+                                songDisplay.searchSongByArtist();
+                            } catch (CustomException e) {
+                                System.out.println(e.getMessage());
+                                System.out.println();
+                            }
                             break;
                         case 5:
                             songDisplay.playAllSong();
                             break;
                     }
-                } while (menuChoice != 6);
+                }
             } else if (choice == 2) {
                 System.out.println();
                 System.out.println("   PLAYLIST   ");
                 List<Playlist> playlist = playlistRepository.getPlaylist();
                 playlistRepository.displayPlaylist(playlist);
                 System.out.println();
-                int option5;
-                do {
+                int option5 = 0;
+                while (option5 != 6) {
                     System.out.println();
                     System.out.println("1.Select a song from playlist");
                     System.out.println("2.Select a playlist ");
@@ -77,6 +92,7 @@ public class Main {
                                 songDisplay.selectSongFromPlaylist();
                             } catch (CustomException e) {
                                 System.out.println(e.getMessage());
+                                System.out.println();
                             }
                             break;
                         case 2:
@@ -103,8 +119,8 @@ public class Main {
                             }
                             break;
                     }
-                } while (option5 != 6);
+                }
             }
-        } while (choice != 3);
+        }
     }
 }
