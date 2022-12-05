@@ -50,8 +50,12 @@ public class SongRepository {
     public void displaySongList(List<Song> songList) {
         System.out.println("    Songs For You TO Enjoy :)!!  ");
         System.out.println();
-        songList.sort((Song o1, Song o2) -> String.CASE_INSENSITIVE_ORDER.compare(o1.getSongName(), o2.getSongName()));
         songList.forEach(System.out::println);
+    }
+
+    public List<Song> sortList(List<Song> songList) {
+        songList.sort((Song o1, Song o2) -> String.CASE_INSENSITIVE_ORDER.compare(o1.getSongName(), o2.getSongName()));
+        return songList;
     }
 
     public void playSong(Song song) {
