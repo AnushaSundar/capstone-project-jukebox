@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3fd95403-ad27-4af6-a7d5-f8c74b5ae86e" name="Changes" comment="made changes in the SongDisplay.java" />
+    <list default="true" id="3fd95403-ad27-4af6-a7d5-f8c74b5ae86e" name="Changes" comment="corrected spaces">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/service/MusicPlayerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/service/MusicPlayerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/niit/jdp/repository/PlaylistRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/niit/jdp/repository/PlaylistRepositoryTest.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -62,7 +66,7 @@
       <recent name="com.niit.jdp.repository" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.SongRepositoryTest">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.niit.jdp.Main" />
       <module name="capstone-project-jukebox" />
@@ -140,11 +144,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.SongRepositoryTest" />
-        <item itemvalue="JUnit.PlaylistRepositoryTest.deletePlaylist" />
-        <item itemvalue="JUnit.PlaylistRepositoryTest.addSongsToPlaylist" />
         <item itemvalue="JUnit.PlaylistRepositoryTest" />
+        <item itemvalue="JUnit.PlaylistRepositoryTest.deletePlaylist" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.PlaylistRepositoryTest.addSongsToPlaylist" />
       </list>
     </recent_temporary>
   </component>
@@ -156,13 +160,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1669808880905</updated>
-    </task>
-    <task id="LOCAL-00052" summary="defined displayPlaylist() in PlaylistRepository.java">
-      <created>1669884505070</created>
-      <option name="number" value="00052" />
-      <option name="presentableId" value="LOCAL-00052" />
-      <option name="project" value="LOCAL" />
-      <updated>1669884505070</updated>
     </task>
     <task id="LOCAL-00053" summary="added deleteSongFromPlaylist() in PlaylistRepository.java">
       <created>1669886205464</created>
@@ -500,7 +497,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670242980046</updated>
     </task>
-    <option name="localTasksCounter" value="101" />
+    <task id="LOCAL-00101" summary="corrected spaces">
+      <created>1670243341929</created>
+      <option name="number" value="00101" />
+      <option name="presentableId" value="LOCAL-00101" />
+      <option name="project" value="LOCAL" />
+      <updated>1670243341929</updated>
+    </task>
+    <option name="localTasksCounter" value="102" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -515,7 +519,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="created SongDisplay.java" />
     <MESSAGE value="added jukeboxDisplay() in SongDisplay.java" />
     <MESSAGE value="added songsDisplay() in SongDisplay.java" />
     <MESSAGE value="added displayPlaylist() in PlaylistRepository.java" />
@@ -540,7 +543,8 @@
     <MESSAGE value="added sortList() in SongRepository.java" />
     <MESSAGE value="finalised the project-working good" />
     <MESSAGE value="made changes in the SongDisplay.java" />
-    <option name="LAST_COMMIT_MESSAGE" value="made changes in the SongDisplay.java" />
+    <MESSAGE value="corrected spaces" />
+    <option name="LAST_COMMIT_MESSAGE" value="corrected spaces" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

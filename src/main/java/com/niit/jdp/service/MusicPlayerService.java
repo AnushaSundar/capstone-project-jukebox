@@ -39,7 +39,6 @@ public class MusicPlayerService {
                 choice = scanner.nextInt();
                 switch (choice) {
                     case 1:
-                        this.currentFrame = clip.getMicrosecondLength();
                         clip.stop();
                         System.out.println("song is paused.");
                         break;
@@ -48,7 +47,6 @@ public class MusicPlayerService {
                         System.out.println("Song is resumed.");
                         break;
                     case 3:
-                        this.currentFrame = 0L;
                         clip.stop();
                         clip.close();
                         System.out.println("Stopped the song.");
