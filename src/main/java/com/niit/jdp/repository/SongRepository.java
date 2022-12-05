@@ -64,11 +64,11 @@ public class SongRepository {
             int option;
             new MusicPlayerService().player(song.getSongPath());
             System.out.println("You stopped the song");
-            System.out.println("press 0 to move to next song");
-            System.out.println("press 1 to exit loop");
+            System.out.println("press 1 to move to next song");
+            System.out.println("press 0 to exit loop");
             Scanner scanner = new Scanner(System.in);
             option = scanner.nextInt();
-            if (option == 1)
+            if (option == 0)
                 break;
         }
 

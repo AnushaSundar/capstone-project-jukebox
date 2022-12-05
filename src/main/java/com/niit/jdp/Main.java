@@ -21,7 +21,8 @@ public class Main {
             System.out.println("===================================");
             System.out.println();
             System.out.println("1.Go to Songs");
-            System.out.println("2.Exit");
+            System.out.println("2.Go to Playlist");
+            System.out.println("3.Exit");
             System.out.println("Enter your choice");
             choice = scanner.nextInt();
             if (choice == 1) {
@@ -32,8 +33,7 @@ public class Main {
                     System.out.println("3.Search songs by genre");
                     System.out.println("4.Search songs by artist");
                     System.out.println("5.Play all songs");
-                    System.out.println("6.Go to playlist");
-                    System.out.println("7.Exit");
+                    System.out.println("6.Exit");
                     System.out.println("Enter your choice");
                     menuChoice = scanner.nextInt();
                     switch (menuChoice) {
@@ -52,54 +52,59 @@ public class Main {
                         case 5:
                             songDisplay.playAllSong();
                             break;
-                        case 6:
-                            System.out.println();
-                            System.out.println("   PLAYLIST   ");
-                            List<Playlist> playlist = playlistRepository.getPlaylist();
-                            playlistRepository.displayPlaylist(playlist);
-                            System.out.println();
-                            int option5;
-                            do {
-                                System.out.println("1.Select a song from playlist");
-                                System.out.println("2.Select a playlist ");
-                                System.out.println("3.Create Playlist");
-                                System.out.println("4.Add song to playlist");
-                                System.out.println("5.Delete Playlist");
-                                System.out.println("6.Go to menu");
-                                System.out.println("Enter your choice");
-                                option5 = scanner.nextInt();
-                                switch (option5) {
-                                    case 1:
-                                        songDisplay.selectSongFromPlaylist();
-                                        break;
-                                    case 2:
-                                        songDisplay.selectPlaylist();
-                                        break;
-                                    case 3:
-                                        songDisplay.createPlaylist();
-                                        break;
-                                    case 4:
-                                        try {
-                                            songDisplay.addSongsToPlaylist();
-                                        } catch (CustomException e) {
-                                            System.err.println(e.getMessage());
-                                            System.out.println();
-                                        }
-                                        break;
-                                    case 5:
-                                        try {
-                                            songDisplay.deletePlaylist();
-                                        } catch (CustomException e) {
-                                            System.err.println(e.getMessage());
-                                            System.out.println();
-                                        }
-                                        break;
-                                }
-                            } while (option5 != 6);
+                    }
+                } while (menuChoice != 6);
+            } else if (choice == 2) {
+                System.out.println();
+                System.out.println("   PLAYLIST   ");
+                List<Playlist> playlist = playlistRepository.getPlaylist();
+                playlistRepository.displayPlaylist(playlist);
+                System.out.println();
+                int option5;
+                do {
+                    System.out.println();
+                    System.out.println("1.Select a song from playlist");
+                    System.out.println("2.Select a playlist ");
+                    System.out.println("3.Create Playlist");
+                    System.out.println("4.Add song to playlist");
+                    System.out.println("5.Delete Playlist");
+                    System.out.println("6.Go to menu");
+                    System.out.println("Enter your choice");
+                    option5 = scanner.nextInt();
+                    switch (option5) {
+                        case 1:
+                            try {
+                                songDisplay.selectSongFromPlaylist();
+                            } catch (CustomException e) {
+                                System.out.println(e.getMessage());
+                            }
+                            break;
+                        case 2:
+                            songDisplay.selectPlaylist();
+                            break;
+                        case 3:
+                            songDisplay.createPlaylist();
+                            break;
+                        case 4:
+                            try {
+                                songDisplay.addSongsToPlaylist();
+                                break;
+                            } catch (CustomException e) {
+                                System.err.println(e.getMessage());
+                                System.out.println();
+                            }
+                            break;
+                        case 5:
+                            try {
+                                songDisplay.deletePlaylist();
+                            } catch (CustomException e) {
+                                System.err.println(e.getMessage());
+                                System.out.println();
+                            }
                             break;
                     }
-                } while (menuChoice != 7);
+                } while (option5 != 6);
             }
-        } while (choice != 2);
+        } while (choice != 3);
     }
 }

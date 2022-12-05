@@ -7,6 +7,7 @@
 
 package com.niit.jdp.repository;
 
+import com.niit.jdp.exception.CustomException;
 import com.niit.jdp.model.Playlist;
 import com.niit.jdp.model.Song;
 import com.niit.jdp.service.DatabaseService;
@@ -21,7 +22,7 @@ public class PlaylistRepository {
         connection = new DatabaseService().getConnectionToDatabase();
     }
 
-    public List<Song> getAllSongsFromPlaylist(int playlistId) {
+    public List<Song> getAllSongsFromPlaylist(int playlistId) throws CustomException {
         List<Song> songList = new ArrayList<>();
         String selectQuery = "select * from `songs`.`playlist` where (`playlist_id`=?);";
         try (PreparedStatement preparedStatement = connection.prepareStatement(selectQuery)) {
@@ -29,10 +30,14 @@ public class PlaylistRepository {
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
                 String songIds = resultSet.getString("song_id");
-                String[] songIdArray = songIds.split(",");
-                for (String songId : songIdArray) {
-                    Song song = new SongRepository().getSong(Integer.parseInt(songId));
-                    songList.add(song);
+                if (songIds != null) {
+                    String[] songIdArray = songIds.split(",");
+                    for (String songId : songIdArray) {
+                        Song song = new SongRepository().getSong(Integer.parseInt(songId));
+                        songList.add(song);
+                    }
+                } else {
+                    throw new CustomException("Playlist is empty");
                 }
             }
         } catch (SQLException e) {

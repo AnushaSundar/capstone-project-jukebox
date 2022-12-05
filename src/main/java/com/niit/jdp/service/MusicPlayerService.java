@@ -27,13 +27,13 @@ public class MusicPlayerService {
             play();
             clip.loop(Clip.LOOP_CONTINUOUSLY);
             int choice;
+            System.out.println();
+            System.out.println("Stop the song before exit!!");
+            System.out.println("1.pause");
+            System.out.println("2.resume");
+            System.out.println("3.stop");
+            System.out.println("4.exit");
             do {
-                System.out.println();
-                System.out.println("Stop the song before exit!!");
-                System.out.println("1.pause");
-                System.out.println("2.resume");
-                System.out.println("3.stop");
-                System.out.println("4.exit");
                 System.out.println("Enter your choice");
                 Scanner scanner = new Scanner(System.in);
                 choice = scanner.nextInt();
@@ -67,7 +67,7 @@ public class MusicPlayerService {
         clip.stop();
     }
 
-    public void resume() throws LineUnavailableException, IOException {
+    public void resume() {
         this.play();
     }
 

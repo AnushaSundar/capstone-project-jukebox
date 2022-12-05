@@ -128,9 +128,14 @@ public class SongDisplay {
         List<Song> allSongs2 = songRepository.getAllSongs();
         songRepository.playAllSongs(allSongs2);
     }
-    public void selectSongFromPlaylist() {
+
+    public void selectSongFromPlaylist() throws CustomException {
         System.out.println("Enter the playlist_id :");
         int playlistId = scanner.nextInt();
+        List<Song> songsFromSelectedPlaylist = playlistRepository.getAllSongsFromPlaylist(playlistId);
+        boolean empty = songsFromSelectedPlaylist.isEmpty();
+        songRepository.displaySongList(songsFromSelectedPlaylist);
+        System.out.println();
         System.out.println("Enter the song_id");
         int songId = scanner.nextInt();
         Song aSongFromPlaylist = playlistRepository.getASongFromPlaylist(songId, playlistId);
@@ -138,9 +143,18 @@ public class SongDisplay {
     }
 
     public void selectPlaylist() {
+        System.out.println("Your playlist !!");
+        List<Playlist> playlist = playlistRepository.getPlaylist();
+        playlistRepository.displayPlaylist(playlist);
+        System.out.println();
         System.out.println("Enter the playlist_id");
         int playlistId2 = scanner.nextInt();
-        List<Song> songsFromPlaylist = playlistRepository.getAllSongsFromPlaylist(playlistId2);
+        List<Song> songsFromPlaylist = null;
+        try {
+            songsFromPlaylist = playlistRepository.getAllSongsFromPlaylist(playlistId2);
+        } catch (CustomException e) {
+            System.out.println(e.getMessage());
+        }
         songRepository.displaySongList(songsFromPlaylist);
         int option6;
         do {
@@ -170,9 +184,15 @@ public class SongDisplay {
     }
 
     public void addSongsToPlaylist() throws CustomException {
+        List<Song> allSongs = songRepository.getAllSongs();
+        songRepository.displaySongList(allSongs);
+        System.out.println();
+        System.out.println("Your playlist !!");
+        List<Playlist> playlist = playlistRepository.getPlaylist();
+        playlistRepository.displayPlaylist(playlist);
         System.out.println("Enter the playlist_id : ");
         int playlistId1 = scanner.nextInt();
-        System.out.println("Enter the song_Id : ");
+        System.out.println("Enter the song_Id separated by comma if you are adding more than one song: ");
         String songId1 = scanner.next();
         boolean addedSongs = playlistRepository.addSongsToPlaylist(songId1, playlistId1);
         if (addedSongs) {
@@ -184,6 +204,8 @@ public class SongDisplay {
     }
 
     public void deletePlaylist() throws CustomException {
+        List<Playlist> playlist = playlistRepository.getPlaylist();
+        playlistRepository.displayPlaylist(playlist);
         System.out.println("Enter the playlist_id : ");
         int playlistId3 = scanner.nextInt();
         boolean deletedPlaylist = playlistRepository.deletePlaylist(playlistId3);

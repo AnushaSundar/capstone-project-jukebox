@@ -1,5 +1,6 @@
 package com.niit.jdp.repository;
 
+import com.niit.jdp.exception.CustomException;
 import com.niit.jdp.model.Playlist;
 import com.niit.jdp.model.Song;
 import org.junit.jupiter.api.AfterEach;
@@ -28,7 +29,7 @@ class PlaylistRepositoryTest {
     }
 
     @Test
-    void getAllSongsFromPlaylist() {
+    void getAllSongsFromPlaylist() throws CustomException {
         //actual
         List<Song> songsFromPlaylist = playlistRepository.getAllSongsFromPlaylist(214);
         //assert
@@ -36,7 +37,7 @@ class PlaylistRepositoryTest {
     }
 
     @Test
-    void getAllSongsFromPlaylistFailure() {
+    void getAllSongsFromPlaylistFailure() throws CustomException {
         //actual
         List<Song> songsFromPlaylist = playlistRepository.getAllSongsFromPlaylist(214);
         //assert
@@ -62,7 +63,7 @@ class PlaylistRepositoryTest {
     @Test
     void addSongsToPlaylist() {
         //actual
-        boolean actual = playlistRepository.addSongsToPlaylist("118", 217);
+        boolean actual = playlistRepository.addSongsToPlaylist("118", 215);
         //assert
         assertTrue(actual);
     }
@@ -78,7 +79,7 @@ class PlaylistRepositoryTest {
     @Test
     void deletePlaylist() {
         //actual
-        boolean actual = playlistRepository.deletePlaylist(217);
+        boolean actual = playlistRepository.deletePlaylist(218);
         //assert
         assertTrue(actual);
     }
