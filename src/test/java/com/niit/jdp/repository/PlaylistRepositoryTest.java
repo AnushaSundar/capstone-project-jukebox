@@ -9,8 +9,7 @@ import org.junit.jupiter.api.Test;
 import java.sql.SQLException;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 class PlaylistRepositoryTest {
     PlaylistRepository playlistRepository;
@@ -65,7 +64,7 @@ class PlaylistRepositoryTest {
         //actual
         boolean actual = playlistRepository.addSongsToPlaylist("118", 217);
         //assert
-        assertEquals(true, actual);
+        assertTrue(actual);
     }
 
     @Test
@@ -73,7 +72,7 @@ class PlaylistRepositoryTest {
         //actual
         boolean actual = playlistRepository.addSongsToPlaylist("101", 20);
         //assert
-        assertEquals(false, actual);
+        assertFalse(actual);
     }
 
     @Test
@@ -81,6 +80,14 @@ class PlaylistRepositoryTest {
         //actual
         boolean actual = playlistRepository.deletePlaylist(217);
         //assert
-        assertEquals(true, actual);
+        assertTrue(actual);
+    }
+
+    @Test
+    void deletePlaylistFailure() {
+        //actual
+        boolean actual = playlistRepository.deletePlaylist(20);
+        //assert
+        assertFalse(actual);
     }
 }
