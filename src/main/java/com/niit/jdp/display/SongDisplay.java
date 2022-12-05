@@ -57,8 +57,10 @@ public class SongDisplay {
     public void searchSongByLanguage() throws CustomException {
         System.out.println("Enter the language");
         String language = scanner.next();
-        if (allSongs.contains(language)) {
-            List<Song> songs = songRepository.searchSongByLanguage(language);
+        List<Song> songs = songRepository.searchSongByLanguage(language);
+        if (songs.isEmpty()) {
+            throw new CustomException("Language not found");
+        } else {
             songRepository.displaySongList(songs);
             System.out.println();
             int option2;
@@ -77,16 +79,16 @@ public class SongDisplay {
                     songRepository.playSong(song);
                 }
             } while (option2 != 3);
-        } else {
-            throw new CustomException("language not found!!");
         }
     }
 
     public void searchSongByGenre() throws CustomException {
         System.out.println("Enter the Genre");
         String genre = scanner.next();
-        if (allSongs.contains(genre)) {
-            List<Song> songs2 = songRepository.searchSongByGenre(genre);
+        List<Song> songs2 = songRepository.searchSongByGenre(genre);
+        if (songs2.isEmpty()) {
+            throw new CustomException("Genre not found!!");
+        } else {
             songRepository.displaySongList(songs2);
             System.out.println();
             int option3;
@@ -105,16 +107,16 @@ public class SongDisplay {
                     songRepository.playSong(song);
                 }
             } while (option3 != 3);
-        } else {
-            throw new CustomException("Genre not found!!");
         }
     }
 
     public void searchSongByArtist() throws CustomException {
         System.out.println("Enter the Artist name");
         String artist = scanner.next();
-        if (allSongs.contains(artist)) {
-            List<Song> songs3 = songRepository.searchSongByArtist(artist);
+        List<Song> songs3 = songRepository.searchSongByArtist(artist);
+        if (songs3.isEmpty()) {
+            throw new CustomException("Artist not found");
+        } else {
             songRepository.displaySongList(songs3);
             System.out.println();
             int option4;
@@ -133,8 +135,6 @@ public class SongDisplay {
                     songRepository.playAllSongs(songs3);
                 }
             } while (option4 != 3);
-        } else {
-            throw new CustomException("Artist not found!!");
         }
     }
 
@@ -217,6 +217,7 @@ public class SongDisplay {
 
     public void deletePlaylist() throws CustomException {
         List<Playlist> playlist = playlistRepository.getPlaylist();
+        System.out.println("     Your Playlist");
         playlistRepository.displayPlaylist(playlist);
         System.out.println("Enter the playlist_id : ");
         int playlistId3 = scanner.nextInt();

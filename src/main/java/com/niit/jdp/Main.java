@@ -14,8 +14,8 @@ public class Main {
         SongDisplay songDisplay = new SongDisplay();
         PlaylistRepository playlistRepository = new PlaylistRepository();
         Scanner scanner = new Scanner(System.in);
-        int choice = 0;
-        while (choice != 3) {
+        int choice;
+        do {
             System.out.println("===================================");
             System.out.println("       Welcome To Jukebox          ");
             System.out.println("===================================");
@@ -121,6 +121,6 @@ public class Main {
                     }
                 }
             }
-        }
+        } while (choice != 3);
     }
 }
