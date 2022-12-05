@@ -16,7 +16,6 @@ public class MusicPlayerService {
     File file;
     AudioInputStream audioInputStream;
     Clip clip;
-    long currentFrame;
 
     public void player(String fileName) {
         file = new File(fileName);
